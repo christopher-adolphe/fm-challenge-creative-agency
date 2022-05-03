@@ -26,14 +26,9 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Front-end Development Boilerplate',
+      title: 'Creative Agency',
       template: path.resolve(__dirname, 'src/index.html'),
       filename: 'index.html'
-    }),
-    new HtmlWebpackPlugin({
-      title: 'Grid System',
-      template: path.resolve(__dirname, 'src/grid-system.html'),
-      filename: 'grid-system.html'
     }),
     new HtmlWebpackPlugin({
       title: 'Design System',
