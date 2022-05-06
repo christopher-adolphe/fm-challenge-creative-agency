@@ -9,31 +9,25 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 
 h1, .h1 {
-  font-size: toRem(56px);
-  line-height: 1.14;
+  font-size: map-get($size-scale, s5);
 }
 
 h2, .h2 {
-  font-size: toRem(40px);
-  line-height: 1.2;
+  font-size: map-get($size-scale, s4);
 }
 
 h3, .h3 {
-  font-size: toRem(30px);
-  line-height: 1;
+  font-size: map-get($size-scale, s3);
 }
 
 h4, .h4 {
-  font-size: toRem(20px);
-  line-height: 1.4;
+  font-size: map-get($size-scale, s2);
 }
 
 h5, .h5 {
-  font-size: toRem(18px);
-  line-height: 1.4;
+  font-size: map-get($size-scale, s1);
 }
 
 h6, .h6 {
-  font-size: toRem(16px);
-  line-height: 1.4;
+  font-size: map-get($size-scale, s0);
 }

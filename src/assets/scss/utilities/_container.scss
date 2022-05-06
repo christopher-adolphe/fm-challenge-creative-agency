@@ -1,0 +1,18 @@
+@use '../abstracts/' as *;
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 map-get($scale-size, s1);
+
+  @each $breakpoint, $value in $breakpoints {
+    @include media-breakpoint(#{$breakpoint}) {
+      max-width: map-get($containers, #{$breakpoint});
+    }
+  }
+
+  &-fluid {
+    max-width: 100%;
+  }
+}

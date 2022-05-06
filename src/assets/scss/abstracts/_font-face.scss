@@ -1,4 +1,4 @@
-@use './fonts' as *;
+@use './config-map' as *;
 
 @each $font, $value in $fonts {
   @font-face {
