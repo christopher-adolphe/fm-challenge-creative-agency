@@ -4,7 +4,7 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 map-get($scale-size, s1);
+  padding: 0 map-get($size-scale, s1);
 
   @each $breakpoint, $value in $breakpoints {
     @include media-breakpoint(#{$breakpoint}) {

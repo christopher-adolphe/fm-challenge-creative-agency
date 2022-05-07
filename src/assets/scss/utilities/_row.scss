@@ -1,0 +1,9 @@
+@use '../abstracts/' as *;
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s0, 1.5rem);
+  justify-content: flex-start;
+  align-items: center;
+}
