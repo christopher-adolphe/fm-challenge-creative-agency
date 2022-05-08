@@ -38,12 +38,12 @@ module.exports = {
     new HtmlWebpackPartialsPlugin({
       path: path.join(__dirname, 'src/partials/header.html'),
       location: 'header',
-      template_filename: ['index.html', 'grid-system.html', 'design-system.html']
+      template_filename: ['index.html']
     }),
     new HtmlWebpackPartialsPlugin({
       path: path.join(__dirname, 'src/partials/footer.html'),
       location: 'footer',
-      template_filename: ['index.html', 'grid-system.html', 'design-system.html']
+      template_filename: ['index.html']
     }),
     new MiniCssExtractPlugin({
       filename: 'assets/css/[name].[contenthash].css'

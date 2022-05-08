@@ -131,7 +131,7 @@ html {
 
 body {
   min-height: 100vh;
-  font: 1rem/1.5 var(--font-family-primary-light);
+  font: 1rem/1.5 var(--font-family-regular);
   text-align: left;
   background-color: var(--neutral-color-1);
   color: var(--dark-color-2);
@@ -139,7 +139,7 @@ body {
 
 p {
   color: var(--dark-color-2);
-  font-size: map-get($size-scale, s0);
+  font-size: toRem(18px);
 }
 
 a {

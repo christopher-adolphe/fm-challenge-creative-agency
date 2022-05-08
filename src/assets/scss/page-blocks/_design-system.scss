@@ -1,0 +1,27 @@
+@use '../abstracts/' as *;
+
+.page--design-system {
+  .header {
+    position: relative;
+    margin-top: toRem(110px);
+    margin-bottom: toRem(150px);
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: toRem(-67px);
+      content: '';
+      width: toRem(134px);
+      height: toRem(60px);
+      background-color: var(--red-color-1);
+      mask-image: url('assets/images/shared/bg-pattern-wave.svg');
+      mask-position: top left;
+      mask-repeat: no-repeat;
+      mask-size: contain;
+    }
+  }
+
+  .page__content > * + * {
+    margin-top: toRem(150px);
+  }
+}

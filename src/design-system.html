@@ -8,135 +8,99 @@
   <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
-  <div class="page">
-    <header class="page__header"></header>
-
-    <main class="page__content">
+  <div id="page-design-system" class="page page--design-system">
+    <header class="header">
       <div class="container">
-        <h1 class="mt-xxxl">Design System</h1>
+        <div class="row">
+          <h1 class="h2 text-dark-color-5">Design System</h1>
+
+          <img src="assets/images/shared/logo.svg" alt="Creative Agency">
+        </div>
       </div>
+    </header>
 
-      <section id="section-color" class="page__section">
+    <main class="page__content | stack">
+      <section id="section-colors" class="page__section" aria-labelledby="heading-section-colors">
         <div class="container">
-          <h2 class="mb-xl">Colors</h2>
+          <h2 id="heading-section-colors" class="mb-s4">Colors</h2>
 
-          <div class="grid">
-            <div class="grid__item">
-              <div class="swatch">
-                <div class="swatch__color bg-blue-color-1"></div>
+          <div class="grid-cols">
+            <div class="grid__item grid__item--span-lg-3">
+              <div class="stack">
+                <div class="stack box | bg-red-color-1 text-neutral-color-1 border-transparent">
+                  <span>Red</span>
+                  
+                  <span class="text-font-extra-bold">#F94F4F</span>
+                </div>
 
-                <div class="swatch__description">
-                  <h3 class="swatch__hex">#8ED6FB</h3>
+                <div class="row">
+                  <span class="mr-s5 text-dark-color-5-opacity-50">RGB</span>
+                  <span>142, 214, 251</span>
+                </div>
 
-                  <h3 class="swatch__color-model">
-                    <span class="swatch__color-model-title">RGB</span>
-                    <span class="swatch__color-model-value">142, 214, 251</span>
-                  </h3>
-
-                  <h3 class="swatch__color-model">
-                    <span class="swatch__color-model-title">HSL</span>
-                    <span class="swatch__color-model-value">200°, 93%, 77%</span>
-                  </h3>
+                <div class="row">
+                  <span class="mr-s5 text-dark-color-5-opacity-50">HSL</span>
+                  <span>200°, 93%, 77%</span>
                 </div>
               </div>
             </div>
 
-            <div class="grid__item">
-              <div class="swatch">
-                <div class="swatch__color bg-blue-color-2"></div>
+            <div class="grid__item grid__item--span-lg-3">
+              <div class="stack">
+                <div class="stack box | bg-dark-color-4 text-neutral-color-1 border-transparent">
+                  <span>BG Black</span>
+                  
+                  <span class="text-font-extra-bold">#191921</span>
+                </div>
 
-                <div class="swatch__description">
-                  <h3 class="swatch__hex">#1C78C0</h3>
+                <div class="row">
+                  <span class="mr-s5 text-dark-color-5-opacity-50">RGB</span>
+                  <span>25, 25, 33</span>
+                </div>
 
-                  <h3 class="swatch__color-model">
-                    <span class="swatch__color-model-title">RGB</span>
-                    <span class="swatch__color-model-value">28, 120, 192</span>
-                  </h3>
-
-                  <h3 class="swatch__color-model">
-                    <span class="swatch__color-model-title">HSL</span>
-                    <span class="swatch__color-model-value">206°, 74%, 43%</span>
-                  </h3>
+                <div class="row">
+                  <span class="mr-s5 text-dark-color-5-opacity-50">HSL</span>
+                  <span>240°, 14%, 11%</span>
                 </div>
               </div>
             </div>
 
-            <div class="grid__item">
-              <div class="swatch">
-                <div class="swatch__color bg-dark-color-1"></div>
+            <div class="grid__item grid__item--span-lg-3">
+              <div class="stack">
+                <div class="stack box | bg-neutral-color-1 text-dark-color-5-opacity-50 border">
+                  <span>White</span>
+                  
+                  <span class="text-font-extra-bold">#FAFAFA</span>
+                </div>
 
-                <div class="swatch__description">
-                  <h3 class="swatch__hex">#9E9E9E</h3>
+                <div class="row">
+                  <span class="mr-s5 text-dark-color-5-opacity-50">RGB</span>
+                  <span>250, 250, 250</span>
+                </div>
 
-                  <h3 class="swatch__color-model">
-                    <span class="swatch__color-model-title">RGB</span>
-                    <span class="swatch__color-model-value">158, 158, 158</span>
-                  </h3>
-
-                  <h3 class="swatch__color-model">
-                    <span class="swatch__color-model-title">HSL</span>
-                    <span class="swatch__color-model-value">0, 0%, 61%</span>
-                  </h3>
+                <div class="row">
+                  <span class="mr-s5 text-dark-color-5-opacity-50">HSL</span>
+                  <span>0°, 0%, 98%</span>
                 </div>
               </div>
             </div>
 
-            <div class="grid__item">
-              <div class="swatch">
-                <div class="swatch__color bg-dark-color-2"></div>
-
-                <div class="swatch__description">
-                  <h3 class="swatch__hex">#757575</h3>
-
-                  <h3 class="swatch__color-model">
-                    <span class="swatch__color-model-title">RGB</span>
-                    <span class="swatch__color-model-value">117, 117, 117</span>
-                  </h3>
-
-                  <h3 class="swatch__color-model">
-                    <span class="swatch__color-model-title">HSL</span>
-                    <span class="swatch__color-model-value">0°, 0%, 45%</span>
-                  </h3>
+            <div class="grid__item grid__item--span-lg-3">
+              <div class="stack">
+                <div class="stack box | bg-dark-color-5 text-neutral-color-1 border-transparent">
+                  <span>Text Black</span>
+                  
+                  <span class="text-font-extra-bold">#212121</span>
                 </div>
-              </div>
-            </div>
 
-            <div class="grid__item">
-              <div class="swatch">
-                <div class="swatch__color bg-neutral-color-4"></div>
-
-                <div class="swatch__description">
-                  <h3 class="swatch__hex">#E0E0E0</h3>
-
-                  <h3 class="swatch__color-model">
-                    <span class="swatch__color-model-title">RGB</span>
-                    <span class="swatch__color-model-value">224, 224, 224</span>
-                  </h3>
-
-                  <h3 class="swatch__color-model">
-                    <span class="swatch__color-model-title">HSL</span>
-                    <span class="swatch__color-model-value">0°, 0%, 87%</span>
-                  </h3>
+                <div class="row">
+                  <span class="mr-s5 text-dark-color-5-opacity-50">RGB</span>
+                  <span>33, 33, 33</span>
                 </div>
-              </div>
-            </div>
 
-            <div class="grid__item">
-              <div class="swatch">
-                <div class="swatch__color bg-neutral-color-5"></div>
-
-                <div class="swatch__description">
-                  <h3 class="swatch__hex">#BDBDBD</h3>
-
-                  <h3 class="swatch__color-model">
-                    <span class="swatch__color-model-title">RGB</span>
-                    <span class="swatch__color-model-value">189, 189, 189</span>
-                  </h3>
-
-                  <h3 class="swatch__color-model">
-                    <span class="swatch__color-model-title">HSL</span>
-                    <span class="swatch__color-model-value">0°, 0%, 74%</span>
-                  </h3>
+                <div class="row">
+                  <span class="mr-s5 text-dark-color-5-opacity-50">HSL</span>
+                  <span>0°, 0%, 12%</span>
                 </div>
               </div>
             </div>
@@ -144,58 +108,46 @@
         </div>
       </section>
 
-      <section id="section-typography" class="page__section">
+      <section id="section-typography" class="page__section" aria-labelledby="heading-section-typography">
         <div class="container">
-          <h2 class="mb-xl">Typography</h2>
+          <h2 id="heading-section-typography" class="mb-s4">Typography</h2>
 
-          <div class="grid">
-            <div class="grid__item">
-              <div class="mb-xxl">
-                <p>Heading H1 - Lato Bold - 56px - 64px Line spacing</p>
+          <div class="grid-cols">
+            <div class="grid__item grid__item--span-lg-6">
+              <div class="stack">
+                <p>Heading H1 - Commissioner - Extra Bold - 80px - 88px Line spacing</p>
 
-                <h1>Morbi in sem placerat</h1>
+                <h1>Lorem Ipsum Dolor Sit</h1>
               </div>
 
-              <div class="mb-xxl">
-                <p>Heading H2 - Lato Bold - 40px - 48px Line spacing</p>
+              <div class="stack | mt-s5">
+                <p>Heading H2 - Commissioner - Extra Bold - 56px - 64px Line spacing</p>
 
-                <h2>Praesent dapibus neque id cursus</h2>
+                <h2>Viverra non semper suscipit posuere a pede donec nec</h2>
               </div>
 
-              <div class="mb-xxl">
-                <p>Heading H3 - Lato Bold - 30px - 30px Line spacing</p>
+              <div class="stack | mt-s5">
+                <p>Heading H3 - Commissioner - Extra Bold - 20px - 32px Line spacing</p>
 
-                <h3>Phasellus ultrices nulla quis nibh</h3>
-              </div>
-
-              <div class="mb-xxl">
-                <p>Heading H4 - Lato Bold - 20px - 28px Line spacing</p>
-
-                <h4>Nam nulla quam gravida non commodo a sodales sit</h4>
+                <h3>Lorem Ipsum Dolor Sit</h3>
               </div>
             </div>
 
-            <div class="grid__item">
-              <div class="mb-xxl">
-                <p>Body (M) - Lato Regular - 22px - 32px Line spacing</p>
+            <div class="grid__item grid__item--span-lg-5">
+              <div class="stack">
+                <p>Body - Commissioner - Regular - 18px - 32px Line spacing</p>
 
-                <p class="text-primary-light" style="font-size: 22px; line-height: 32px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.</p>
-                <p class="text-primary-light" style="font-size: 22px; line-height: 32px;">Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis.</p>
-              </div>
-
-              <div class="mb-xxl">
-                <p>Body (S) - Lato Regular - 18px - 28px Line spacing</p>
-
-                <p class="text-primary-light" style="font-size: 18px; line-height: 28px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.</p>
+                <p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="section-buttons" class="page__section">
+      <section id="section-buttons" class="page__section" aria-labelledby="heading-section-buttons">
         <div class="container">
-          <h2 class="mb-xl">Buttons</h2>
+          <h2 id="heading-section-buttons" class="mb-s4">Buttons</h2>
 
           <div class="grid">
             <div class="grid__item">

@@ -8,6 +8,7 @@ This file is used to contain all utilities imports to create composition.
 @forward 'text-color';
 @forward 'text-font';
 @forward 'text-size';
+@forward 'border';
 @forward 'visually-hidden';
 
 // Import Spacing Utility Files
@@ -16,6 +17,7 @@ This file is used to contain all utilities imports to create composition.
 
 // Import Layout Utility Files
 @forward 'box';
+@forward 'page';
 @forward 'container';
 @forward 'grid';
 @forward 'row';
