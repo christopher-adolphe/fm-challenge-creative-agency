@@ -149,46 +149,86 @@
         <div class="container">
           <h2 id="heading-section-buttons" class="mb-s4">Buttons</h2>
 
-          <div class="grid">
-            <div class="grid__item">
-              <div class="d-flex d-flex--col d-flex--justify-content-stretch d-flex--align-items-center mb-xxxxl">
-                <button type="button" class="btn btn--primary">Button 1</button>
+          <div class="grid-cols">
+            <div class="grid__item grid__item--span-lg-3 stack">
+              <div class="stack">
+                <p class="text-align-center">Idle</p>
 
-                <p class="card__text text-center mt-xl">Normal</p>
+                <button class="btn">Default</button>
               </div>
 
-              <div class="d-flex d-flex--col d-flex--justify-content-stretch d-flex--align-items-center">
-                <button type="button" class="btn btn--primary active">Button 1</button>
+              <div class="stack">
+                <p class="text-align-center">Hover</p>
 
-                <p class="card__text text-center mt-xl">Hover</p>
-              </div>
-            </div>
-
-            <div class="grid__item">
-              <div class="d-flex d-flex--col d-flex--justify-content-stretch d-flex--align-items-center mb-xxxxl">
-                <button type="button" class="btn btn--secondary">Button 2</button>
-
-                <p class="card__text text-center mt-xl">Normal</p>
-              </div>
-
-              <div class="d-flex d-flex--col d-flex--justify-content-stretch d-flex--align-items-center">
-                <button type="button" class="btn btn--secondary active">Button 2</button>
-
-                <p class="card__text text-center mt-xl">Hover</p>
+                <button class="btn active">Default</button>
               </div>
             </div>
 
-            <div class="grid__item">
-              <div class="d-flex d-flex--col d-flex--justify-content-stretch d-flex--align-items-center mb-xxxxl">
-                <button type="button" class="btn btn--tertiary">Button 3</button>
+            <div class="grid__item grid__item--span-lg-3 stack">
+              <div class="stack">
+                <p class="text-align-center">Idle</p>
 
-                <p class="card__text text-center mt-xl">Normal</p>
+                <button class="btn" data-variant="primary">Primary</button>
               </div>
 
-              <div class="d-flex d-flex--col d-flex--justify-content-stretch d-flex--align-items-center">
-                <button type="button" class="btn btn--tertiary active">Button 3</button>
+              <div class="stack">
+                <p class="text-align-center">Hover</p>
 
-                <p class="card__text text-center mt-xl">Hover</p>
+                <button class="btn active" data-variant="primary">Primary</button>
+              </div>
+            </div>
+
+            <div class="grid__item grid__item--span-lg-3 stack">
+              <div class="stack">
+                <p class="text-align-center">Idle</p>
+
+                <button class="btn" data-variant="secondary">Secondary</button>
+              </div>
+
+              <div class="stack">
+                <p class="text-align-center">Hover</p>
+
+                <button class="btn active" data-variant="secondary">Secondary</button>
+              </div>
+            </div>
+
+            <div class="grid__item grid__item--span-lg-3 stack">
+              <div class="stack">
+                <p class="text-align-center">Idle</p>
+
+                <button class="btn" data-variant="link">
+                  <span>Link</span>
+                </button>
+              </div>
+
+              <div class="stack">
+                <p class="text-align-center">Hover</p>
+
+                <button class="btn active" data-variant="link">
+                  <span>Link</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="grid__item grid__item--span-lg-3 stack">
+              <div class="stack">
+                <p class="text-align-center">Idle</p>
+
+                <div class="row" data-variant="centered">
+                  <button class="btn" data-variant="rounded-prev" title="Previous"></button>
+
+                  <button class="btn" data-variant="rounded-next" title="Next"></button>
+                </div>
+              </div>
+
+              <div class="stack">
+                <p class="text-align-center">Hover</p>
+
+                <div class="row" data-variant="centered">
+                  <button class="btn active" data-variant="rounded-prev" title="Previous"></button>
+
+                  <button class="btn active" data-variant="rounded-next" title="Next"></button>
+                </div>
               </div>
             </div>
           </div>
