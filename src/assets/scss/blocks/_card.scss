@@ -1,0 +1,9 @@
+@use '../abstracts/' as *;
+
+.card {
+  align-items: center;
+  
+  &__content + &__content {
+    margin-top: toRem(58px);
+  }
+}

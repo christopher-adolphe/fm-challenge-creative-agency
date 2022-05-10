@@ -1,0 +1,16 @@
+@use '../abstracts/' as *;
+
+.swatch {
+  &__color > * + * {
+    margin-top: toRem(58px);
+  }
+
+  &__color-model {
+    gap: toRem(64px);
+    margin-top: toRem(24px);
+
+    &:last-child {
+      margin-top: 0;
+    }
+  }
+}

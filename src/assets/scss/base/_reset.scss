@@ -30,6 +30,8 @@ dd {
 ul[role='list'],
 ol[role='list'] {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* Set core root defaults */
@@ -129,33 +131,25 @@ html {
 
 body {
   min-height: 100vh;
-  font: 1rem/1.5 var(--font-family-primary-light);
+  font: 1rem/1.5 $font-family;
+  font-weight: var(--font-weight-regular);
   text-align: left;
   background-color: var(--neutral-color-1);
   color: var(--dark-color-2);
 }
 
 p {
-  margin: 0;
   color: var(--dark-color-2);
   font-size: toRem(18px);
-  line-height: 1.6;
-
-  &:not(:last-child) {
-    margin-bottom: toRem(16px);
-  }
 }
 
 a {
   color: var(--dark-color-1);
   text-decoration: none;
+  cursor: pointer;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-.img-fluid {
-  height: auto;
+:focus {
+  outline: var(--dark-color-1) dotted 3px;
+  outline-offset: 0.25rem;
 }

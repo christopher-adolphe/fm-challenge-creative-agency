@@ -1,4 +1,4 @@
-# Frontend Mentor - Art gallery website
+# Frontend Mentor - Creative agency single page site
 
 This is my solution to the [Creative agency single page site challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/creative-agency-singlepage-site-Pq6V3I2RM).
 

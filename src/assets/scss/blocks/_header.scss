@@ -1,0 +1,7 @@
+@use '../abstracts/' as *;
+
+.header {
+  .row {
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,11 @@
+@use '../abstracts/' as *;
+
+.border {
+  --border-color: var(--neutral-color-4);
+
+  border: 1px solid var(--border-color);
+
+  &-transparent {
+    border: 1px solid transparent;
+  }
+}

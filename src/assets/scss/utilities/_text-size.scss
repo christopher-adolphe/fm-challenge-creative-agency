@@ -1,0 +1,7 @@
+@use '../abstracts/' as *;
+
+@each $scale, $value in $size-scale {
+  .text-size-#{$scale} {
+    font-size: #{$value};
+  }
+}

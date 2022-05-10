@@ -7,13 +7,17 @@ export const getDOMElement = (id: string): HTMLElement | null => {
 
 export const generateCopyright = (elem: HTMLElement | null) => {
   const year = new Date().getFullYear();
-  const copyrightText = `© ${year}. Created by Christopher Adolphe`;
+  const copyrightContent = `© ${year}`;
 
   if (!elem) {
     return;
   }
 
-  elem.textContent = copyrightText;
+  const copyrightElem: HTMLElement | null = elem.querySelector('.footer__copyright-text');
+
+  if (copyrightElem) {
+    copyrightElem.innerHTML = copyrightContent;
+  }
 };
 
 export const generateSlider = (id: string, options: { [key: string]: any } | undefined): Swiper | undefined => {

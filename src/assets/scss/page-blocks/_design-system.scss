@@ -1,0 +1,12 @@
+@use '../abstracts/' as *;
+
+.page--design-system {
+  .header {
+    margin-top: toRem(110px);
+    margin-bottom: toRem(150px);
+  }
+
+  .page__content > * + * {
+    margin-top: toRem(150px);
+  }
+}

@@ -1,0 +1,91 @@
+@use '../abstracts/' as *;
+
+.btn {
+  --btn-bg-color: var(--neutral-color-3);
+  --btn-text-color: var(--dark-color-1);
+
+  --btn-bg-active-color: var(--neutral-color-5);
+  --btn-text-active-color: var(--neutral-color-3);
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-s2) var(--space-s4);
+  background-color: var(--btn-bg-color);
+  color: var(--btn-text-color);
+  font-weight: var(--font-weight-extra-bold);
+  font-size: toRem(18px);
+  line-height: 1.2;
+  transition: background-color 0.75s ease-in-out,
+              color 0.75s ease-in-out;
+  cursor: pointer;
+
+  &:hover,
+  &:focus,
+  &.active {
+    background-color: var(--btn-bg-active-color);
+    color: var(--btn-text-active-color);
+  }
+
+  &[data-variant="primary"] {
+    --btn-bg-color: var(--red-color-1);
+    --btn-text-color: var(--neutral-color-1);
+
+    --btn-bg-active-color: var(--red-color-2);
+    --btn-text-active-color: var(--neutral-color-1);
+  }
+
+  &[data-variant="secondary"] {
+    --btn-bg-color: var(--dark-color-4);
+    --btn-text-color: var(--neutral-color-1);
+
+    --btn-bg-active-color: var(--dark-color-3);
+    --btn-text-active-color: var(--neutral-color-1);
+  }
+
+  &[data-variant="link"] {
+    --btn-bg-color: transparent;
+    --btn-text-color: var(--red-color-1);
+
+    --btn-bg-active-color: transparent;
+    --btn-text-active-color: var(--red-color-2);
+
+    span {
+      display: inline-block;
+      border-bottom: 2px solid var(--btn-text-color);
+    }
+
+    &:hover,
+    &:focus,
+    &.active {
+      span {
+        border-bottom: 2px solid var(--btn-text-active-color);
+      }
+    }
+  }
+
+  &[data-variant="rounded-prev"],
+  &[data-variant="rounded-next"] {
+    width: toRem(40px);
+    height: toRem(40px);
+    padding: 0;
+    background-color: var(--red-color-1);
+    mask-position: center center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+
+    &:hover,
+    &:focus,
+    &.active {
+      background-color: var(--red-color-2);
+    }
+  }
+
+  &[data-variant="rounded-prev"] {
+    mask-image: url('assets/images/shared/icon-arrow-previous.svg');
+  }
+
+  &[data-variant="rounded-next"] {
+    mask-image: url('assets/images/shared/icon-arrow-next.svg');
+  }
+}
