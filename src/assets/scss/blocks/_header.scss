@@ -1,7 +1,28 @@
 @use '../abstracts/' as *;
 
 .header {
+  --vertical-space: #{toRem(40px)};
+
+  background-color: var(--neutral-color-1);
+
   .row {
     justify-content: space-between;
+    padding-top: var(--vertical-space);
+    padding-bottom: var(--vertical-space);
+  }
+
+  &__navigation {
+    > .row {
+      padding: 0;
+      gap: toRem(32px);
+    }
+  }
+
+  @include media-breakpoint(md) {
+    background: linear-gradient(to right, var(--neutral-color-1) 50%, var(--red-color-1) 50%);
+  }
+
+  @include media-breakpoint(xl) {
+    --vertical-space: #{toRem(56px)};
   }
 }
