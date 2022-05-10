@@ -1,0 +1,10 @@
+@use '../abstracts/' as *;
+
+.footer {
+  padding-top: toRem(120px);
+  padding-bottom: toRem(115px);
+
+  &__copyright {
+    gap: var(--space-s-2);
+  }
+}

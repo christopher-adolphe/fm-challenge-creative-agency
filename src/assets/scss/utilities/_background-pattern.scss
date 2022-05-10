@@ -1,0 +1,19 @@
+@use '../abstracts/' as *;
+
+.bg-wave {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: calc(50% - toRem(30px));
+    left: toRem(-67px);
+    content: '';
+    width: toRem(134px);
+    height: toRem(60px);
+    background-color: var(--red-color-1);
+    mask-image: url('assets/images/shared/bg-pattern-wave.svg');
+    mask-position: top left;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+  }
+}

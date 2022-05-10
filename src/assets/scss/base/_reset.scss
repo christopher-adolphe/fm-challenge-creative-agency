@@ -131,7 +131,8 @@ html {
 
 body {
   min-height: 100vh;
-  font: 1rem/1.5 var(--font-family-regular);
+  font: 1rem/1.5 $font-family;
+  font-weight: var(--font-weight-regular);
   text-align: left;
   background-color: var(--neutral-color-1);
   color: var(--dark-color-2);
@@ -145,6 +146,7 @@ p {
 a {
   color: var(--dark-color-1);
   text-decoration: none;
+  cursor: pointer;
 }
 
 :focus {

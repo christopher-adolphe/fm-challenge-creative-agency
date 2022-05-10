@@ -4,17 +4,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="assets/images/favicon-32x32.png" type="image/x-icon">
+  <link rel="icon" href="assets/images/favicon-32x32.svg" type="image/x-icon">
   <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
   <div id="page-design-system" class="page page--design-system">
-    <header class="header">
+    <header class="header | bg-wave">
       <div class="container">
         <div class="row">
           <h1 class="h2 text-dark-color-5">Design System</h1>
 
-          <img src="assets/images/shared/logo.svg" alt="Creative Agency">
+          <img src="assets/images/shared/logo-full.svg" alt="Creative Agency logo">
         </div>
       </div>
     </header>
@@ -245,6 +245,20 @@
         </div>
       </section>
     </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div id="copyright" class="footer__copyright | row">
+          <p class="text-size-s-1">&copy; 2022</p>
+
+          <svg role="img" aria-label="Creative Agency logo" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M28.6069 12.8145H26.6434C26.5488 13.3303 26.3597 13.7443 26.076 14.0566C25.7923 14.3688 25.3803 14.5249 24.8399 14.5249C24.3536 14.5249 23.8267 14.3959 23.2594 14.138C22.692 13.8801 22.0773 13.5848 21.4154 13.2523C20.7535 12.9197 20.0206 12.6278 19.2168 12.3767C18.413 12.1256 17.5316 12 16.5724 12C14.8433 12 13.4823 12.733 12.4894 14.1991C11.4965 15.6652 11 17.6538 11 20.1652H15.3566C15.4512 19.6629 15.664 19.2557 15.9949 18.9434C16.3259 18.6312 16.7683 18.4751 17.3222 18.4751C17.7815 18.4751 18.2881 18.6007 18.8419 18.8518C19.3958 19.1029 20.0172 19.3982 20.7062 19.7376C21.3951 20.0769 22.155 20.3722 22.9858 20.6233C23.8166 20.8744 24.7183 21 25.691 21C26.6941 21 27.5687 20.7252 28.3148 20.1757C26.5755 25.307 21.719 29 16 29C8.8203 29 3 23.1797 3 16C3 8.8203 8.8203 3 16 3C22.0807 3 27.1863 7.1748 28.6069 12.8145Z" fill="#F94F4F"/>
+          </svg>
+
+          <p class="text-size-s-1">Coded by <a href="https://github.com/christopher-adolphe/fm-challenge-creative-agency" aria-label="Christopher's github repository for the Creative Agency challenge on Frontend Mentor" target="_blank">Christopher Adolphe</a></p>
+        </div>
+      </div>
+    </footer>
   </div>
 </body>
 </html>

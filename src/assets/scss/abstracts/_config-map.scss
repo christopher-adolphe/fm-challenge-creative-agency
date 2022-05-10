@@ -2,6 +2,7 @@
 // Root Fonts Size
 //------------------------------------------------------------------------------
 $root-font-size: 16px;
+$font-family: 'Commissioner', sans-serif;
 
 //------------------------------------------------------------------------------
 // Grid Columns
@@ -36,7 +37,7 @@ $breakpoints: (
   md: 768px,
   lg: 992px,
   xl: 1200px,
-  xxl: 1400px
+  xxl: 1110px
 );
 
 //------------------------------------------------------------------------------
@@ -100,10 +101,16 @@ $shadows: (
 //------------------------------------------------------------------------------
 // Fonts
 //------------------------------------------------------------------------------
+// $fonts: (
+//   light: 'commissioner-light',
+//   regular: 'commissioner-regular',
+//   extra-bold: 'commissioner-extra-bold'
+// );
+
 $fonts: (
-  light: 'commissioner-light',
-  regular: 'commissioner-regular',
-  extra-bold: 'commissioner-extra-bold'
+  light: 100,
+  regular: 400,
+  extra-bold: 800
 );
 
 //------------------------------------------------------------------------------

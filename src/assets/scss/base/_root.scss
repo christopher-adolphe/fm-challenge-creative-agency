@@ -2,7 +2,7 @@
 
 :root {
   @each $font, $value in $fonts {
-    --font-family-#{$font}: #{$value};
+    --font-weight-#{$font}: #{$value};
   }
 
   @each $color, $shade in $colors {

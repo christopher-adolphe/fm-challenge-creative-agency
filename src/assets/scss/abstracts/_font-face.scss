@@ -1,11 +1,12 @@
-@use './config-map' as *;
+// @use './config-map' as *;
 
-@each $font, $value in $fonts {
-  @font-face {
-    font-family: #{$value};
-    src: url('../../assets/fonts/#{$value}-webfont.woff2') format('woff2'),
-    url('../../assets/fonts/#{$value}-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
-}
+// @each $font, $value in $fonts {
+//   @font-face {
+//     font-family: #{$value};
+//     src: url('../../assets/fonts/#{$value}-webfont.woff2') format('woff2'),
+//     url('../../assets/fonts/#{$value}-webfont.woff') format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+//   }
+// }
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@100;400;800&display=swap');
