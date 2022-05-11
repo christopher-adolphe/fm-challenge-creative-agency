@@ -1,0 +1,30 @@
+@use '../abstracts/' as *;
+
+.hero {
+  --vertical-space-top: #{calc(map-get($size-scale, s0) * 16)};
+  --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 6)};
+  --content-gap: #{calc(map-get($size-scale, s0) * 2.5)};
+
+  padding-top: var(--vertical-space-top);
+  padding-bottom: var(--vertical-space-bottom);
+
+  &__content {
+    align-items: flex-start;
+
+    > * + * {
+      margin-top: var(--content-gap);
+    }
+  }
+
+  @include media-breakpoint(md) {
+    --vertical-space-top: #{calc(map-get($size-scale, s0) * 4.75)};
+    --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 9.375)};
+    --content-gap: #{calc(map-get($size-scale, s0) * 2)};
+  }
+
+  @include media-breakpoint(xl) {
+    --vertical-space-top: #{calc(map-get($size-scale, s0) * 7)};
+    --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 10)};
+    --content-gap: #{calc(map-get($size-scale, s0) * 3)};
+  }
+}

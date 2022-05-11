@@ -16,8 +16,8 @@
   font-weight: var(--font-weight-extra-bold);
   font-size: toRem(18px);
   line-height: 1.2;
-  transition: background-color 0.75s ease-in-out,
-              color 0.75s ease-in-out;
+  transition: background-color 0.35s ease-in-out,
+              color 0.35s ease-in-out;
   cursor: pointer;
 
   &:hover,
@@ -64,15 +64,32 @@
     }
   }
 
+  &[data-variant="burger"],
+  &[data-variant="rounded-prev"],
+  &[data-variant="rounded-next"] {
+    mask-position: center center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+  }
+
+  &[data-variant="burger"] {
+    width: toRem(24px);
+    height: toRem(24px);
+    padding: var(--space-s0);
+    background-color: var(--dark-color-5-opacity-50);
+    mask-image: url('assets/images/shared/icon-hamburger.svg');
+
+    &[aria-expanded="true"] {
+      mask-image: url('assets/images/shared/icon-cross.svg');
+    }
+  }
+
   &[data-variant="rounded-prev"],
   &[data-variant="rounded-next"] {
     width: toRem(40px);
     height: toRem(40px);
     padding: 0;
     background-color: var(--red-color-1);
-    mask-position: center center;
-    mask-repeat: no-repeat;
-    mask-size: contain;
 
     &:hover,
     &:focus,

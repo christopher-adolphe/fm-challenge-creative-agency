@@ -1,27 +1,29 @@
-<div class="container">
-  <div class="row">
-    <a href="/" class="header__brand">
-      <img src="assets/images/shared/logo-full.svg" alt="Creative Agency logo">
-    </a>
+<div class="container row">
+  <a href="/" class="header__brand">
+    <img src="assets/images/shared/logo-full.svg" alt="Creative Agency logo">
+  </a>
 
-    <nav class="header__navigation">
-      <ul class="row">
-        <li>
-          <a href="/">About</a>
-        </li>
+  <button type="button" id="btn-nav-toggle" class="header__nav-toggle | btn" data-variant="burger" aria-controls="header-nav" aria-expanded="false">
+    <span class="visually-hidden">Toggle Menu</span>
+  </button>
 
-        <li>
-          <a href="/">Service</a>
-        </li>
+  <nav id="header-nav" class="header__nav">
+    <ul class="row">
+      <li>
+        <a href="/" class="active">About</a>
+      </li>
 
-        <li>
-          <a href="/">Projects</a>
-        </li>
+      <li>
+        <a href="/">Service</a>
+      </li>
 
-        <li>
-          <a href="/" class="btn" data-variant="secondary">Schedule a Call</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
+      <li>
+        <a href="/">Projects</a>
+      </li>
+
+      <li>
+        <a href="/" class="btn" data-variant="secondary">Schedule a Call</a>
+      </li>
+    </ul>
+  </nav>
 </div>

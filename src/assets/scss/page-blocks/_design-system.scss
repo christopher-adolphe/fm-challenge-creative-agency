@@ -2,8 +2,11 @@
 
 .page--design-system {
   .header {
+    --vertical-space: 0;
+
     margin-top: toRem(110px);
     margin-bottom: toRem(150px);
+    background: transparent;
   }
 
   .page__content > * + * {

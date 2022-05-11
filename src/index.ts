@@ -1,7 +1,13 @@
 import { Pagination } from "swiper";
 import 'swiper/css/pagination';
 
-import { getDOMElement, generateCopyright, generateSlider } from "./assets/js/utilities";
+import {
+  getDOMElement,
+  generateCopyright,
+  generateSlider,
+  toggleHeaderVariant,
+  toggleNavigation
+} from "./assets/js/utilities";
 
 document.addEventListener('DOMContentLoaded', () => {
   const copyrightElem = getDOMElement('copyright');
@@ -24,4 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   heroSlider?.init();
+
+  toggleHeaderVariant('header');
+
+  toggleNavigation('btn-nav-toggle');
 });

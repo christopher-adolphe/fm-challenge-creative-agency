@@ -10,7 +10,6 @@ This file is used to contain all utilities imports to create composition.
 @forward 'text-font';
 @forward 'text-size';
 @forward 'border';
-@forward 'visually-hidden';
 
 // Import Spacing Utility Files
 @forward 'margin-spacing';
@@ -23,3 +22,7 @@ This file is used to contain all utilities imports to create composition.
 @forward 'grid';
 @forward 'row';
 @forward 'stack';
+
+// Import Miscs Utility Files
+@forward 'no-scrolling';
+@forward 'visually-hidden';

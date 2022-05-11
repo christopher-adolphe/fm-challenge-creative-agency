@@ -3,8 +3,10 @@ This file is used to contain all block imports to apply styles to skeletal compo
 */
 
 // Import Block Files
+@forward 'page';
 @forward 'header';
 @forward 'footer';
+@forward 'hero';
 @forward 'swatch';
 @forward 'card';
 @forward 'button';

@@ -1,10 +1,40 @@
 @use '../abstracts/' as *;
 
 .footer {
-  padding-top: toRem(120px);
-  padding-bottom: toRem(115px);
+  --vertical-space: #{toRem(100px)};
+
+  padding-top: var(--vertical-space);
+  padding-bottom: var(--vertical-space);
+
+  &::before {
+    display: none;
+  }
 
   &__copyright {
     gap: var(--space-s-2);
+    margin-top: toRem(30px);
+  }
+
+  @include media-breakpoint(md) {
+    --vertical-space: #{toRem(70px)};
+
+    &__cta {
+      .row {
+        justify-content: flex-end;
+      }
+    }
+
+    &__copyright {
+      padding-top: toRem(30px);
+      border-top: 1px solid var(--dark-color-5-opacity-50);
+    }
+  }
+
+  @include media-breakpoint(xl) {
+    --vertical-space: #{toRem(120px)};
+
+    &::before {
+      display: block;
+    }
   }
 }
