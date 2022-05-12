@@ -12,7 +12,14 @@
     <header id="header" class="header"></header>
 
     <main class="page__content">
-      <section class="hero">
+      <section class="hero | picture-align-right">
+        <picture class="hero__illustration">
+          <source media="(max-width: 767px)" srcset="assets/images/home/mobile/image-hero.jpg">
+          <source media="(max-width: 800px)" srcset="assets/images/home/tablet/image-hero.jpg">
+          <source media="(max-width: 1200px)" srcset="assets/images/home/desktop/image-hero.jpg">
+          <img src="assets/images/home/desktop/image-hero.jpg" alt="Branding & website design agency" />
+        </picture>
+
         <div class="container">
           <div class="grid-cols">
             <div class="grid__item grid__item--span-md-7">
@@ -22,6 +29,31 @@
                 <p>We specialize in visual storytelling by creating cohesive brand and website design solutions for small businesses, giving lasting impressions to audiences in a digital world.</p>
 
                 <a href="/" class="btn" data-variant="primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="picture-align | bg-dark-color-4">
+        <picture>
+          <source media="(max-width: 767px)" srcset="assets/images/home/mobile/image-strategic.jpg">
+          <source media="(max-width: 800px)" srcset="assets/images/home/tablet/image-strategic.jpg">
+          <source media="(max-width: 1200px)" srcset="assets/images/home/desktop/image-strategic.jpg">
+          <img src="assets/images/home/desktop/image-strategic.jpg" alt="Design is strategic" />
+        </picture>
+
+        <div class="container">
+          <div class="grid-cols">
+            <div class="grid__item grid__item--span-md-6 grid__item--start-md-6">
+              <div class="stack | text-neutral-color-1">
+                <h2><span class="text-red-color-1">Design</span> is strategic.</h2>
+
+                <p>“A well-crafted design strategy consistently produces desired outcomes and brand awareness. We are firm believers that success lies in creative collaboration with our clients.”</p>
+
+                <a href="/" class="btn" data-variant="link">
+                  <span>Schedule a Call</span>
+                </a>
               </div>
             </div>
           </div>

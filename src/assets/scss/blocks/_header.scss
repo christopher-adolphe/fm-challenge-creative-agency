@@ -83,7 +83,11 @@
     --nav-cta-gap: #{toRem(16px)};
     --nav-font-size: #{toRem(15px)};
 
-    background: linear-gradient(to right, var(--neutral-color-1) var(--gradient-length), var(--red-color-1) var(--gradient-length));
+    background: linear-gradient(
+      to right,
+      var(--neutral-color-1) var(--gradient-length),
+      var(--red-color-1) var(--gradient-length)
+    );
 
     [data-variant="burger"] {
       display: none;

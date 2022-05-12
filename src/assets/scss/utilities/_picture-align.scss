@@ -1,0 +1,44 @@
+@use '../abstracts/' as *;
+
+.picture {
+  &-align,
+  &-align-right {
+    --illus-min-width: #{toRem(375px)};
+    --illus-max-width: #{toRem(895px)};
+    --illus-target-width: 60vw;
+
+    position: relative;
+
+    > picture {
+      width: clamp(
+        var(--illus-min-width),
+        var(--illus-target-width),
+        var(--illus-max-width)
+      );
+    }
+
+    @include media-breakpoint(md) {
+      > picture {
+        position: absolute;
+        top: 0;
+      }
+    }
+  }
+
+  &-align {
+    @include media-breakpoint(md) {
+      > picture {
+        left: 0;
+      }
+    }
+  }
+
+  &-align-right {
+    @include media-breakpoint(md) {
+      > picture {
+        right: 0;
+        z-index: -1;
+      }
+    }
+  }
+}

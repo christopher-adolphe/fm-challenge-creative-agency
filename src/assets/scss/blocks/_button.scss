@@ -1,20 +1,22 @@
 @use '../abstracts/' as *;
 
 .btn {
+  --btn-vertical-space: #{calc(map-get($size-scale, s0) * 1.5)};
+  --btn-horizontal-space: #{calc(map-get($size-scale, s0) * 2.5)};
+  --btn-font-size: #{calc(map-get($size-scale, s0) * 1.125)};
   --btn-bg-color: var(--neutral-color-3);
   --btn-text-color: var(--dark-color-1);
-
   --btn-bg-active-color: var(--neutral-color-5);
   --btn-text-active-color: var(--neutral-color-3);
 
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: var(--space-s2) var(--space-s4);
+  padding: var(--btn-vertical-space) var(--btn-horizontal-space);
   background-color: var(--btn-bg-color);
   color: var(--btn-text-color);
   font-weight: var(--font-weight-extra-bold);
-  font-size: toRem(18px);
+  font-size: var(--btn-font-size);
   line-height: 1.2;
   transition: background-color 0.35s ease-in-out,
               color 0.35s ease-in-out;
@@ -30,7 +32,6 @@
   &[data-variant="primary"] {
     --btn-bg-color: var(--red-color-1);
     --btn-text-color: var(--neutral-color-1);
-
     --btn-bg-active-color: var(--red-color-2);
     --btn-text-active-color: var(--neutral-color-1);
   }
@@ -38,15 +39,14 @@
   &[data-variant="secondary"] {
     --btn-bg-color: var(--dark-color-4);
     --btn-text-color: var(--neutral-color-1);
-
     --btn-bg-active-color: var(--dark-color-3);
     --btn-text-active-color: var(--neutral-color-1);
   }
 
   &[data-variant="link"] {
+    --btn-horizontal-space: 0;
     --btn-bg-color: transparent;
     --btn-text-color: var(--red-color-1);
-
     --btn-bg-active-color: transparent;
     --btn-text-active-color: var(--red-color-2);
 
@@ -104,5 +104,17 @@
 
   &[data-variant="rounded-next"] {
     mask-image: url('assets/images/shared/icon-arrow-next.svg');
+  }
+
+  @include media-breakpoint(md) {
+    --btn-vertical-space: #{calc(map-get($size-scale, s0) * 1.25)};
+    --btn-horizontal-space: #{calc(map-get($size-scale, s0) * 1.125)};
+    --btn-font-size: #{map-get($size-scale, s0)};
+  }
+
+  @include media-breakpoint(xl) {
+    --btn-vertical-space: #{calc(map-get($size-scale, s0) * 1.5)};
+    --btn-horizontal-space: #{calc(map-get($size-scale, s0) * 2.5)};
+    --btn-font-size: #{calc(map-get($size-scale, s0) * 1.125)};
   }
 }
