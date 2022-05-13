@@ -1,0 +1,137 @@
+@use '../abstracts/' as *;
+
+.section {
+  --vertical-space-top: 0;
+  --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 6)};
+  --content-gap: #{calc(map-get($size-scale, s0) * 2.5)};
+
+  padding-top: var(--vertical-space-top);
+  padding-bottom: var(--vertical-space-bottom);
+
+  &__content {
+    align-items: flex-start;
+    padding-top: calc(map-get($size-scale, s0) * 3.5);
+    z-index: 2;
+
+    > * + * {
+      margin-top: var(--content-gap);
+    }
+  }
+
+  &[data-variant="strategy"] {
+    --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 4.5)};
+
+    .section {
+      &__content {
+        padding-top: calc(map-get($size-scale, s0) * 4.5);
+
+        &::before {
+          top: -#{map-get($size-scale, s0)};
+          left: 0;
+        }
+
+        > *:not(a) {
+          color: inherit;
+        }
+      }
+    }
+  }
+
+  &[data-variant="approach"] {
+    --vertical-space-top: #{calc(map-get($size-scale, s0) * 6)};
+
+    background-color: var(--red-color-1);
+  }
+
+  @include media-breakpoint(md) {
+    --vertical-space-top: #{calc(map-get($size-scale, s0) * 4.75)};
+    --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 6)};
+    --content-gap: #{calc(map-get($size-scale, s0) * 2)};
+
+    &__content {
+      padding-top: 0;
+    }
+
+    &[data-variant="hero"] {
+      .section {
+        &__illustration {
+          &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+              to right,
+              var(--neutral-color-1) 0%,
+              var(--neutral-color-1-opacity-0) 10%
+            );
+          }
+        }
+      }
+    }
+
+    &[data-variant="strategy"] {
+      --vertical-space-top: #{calc(map-get($size-scale, s0) * 7.5)};
+      --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 13.25)};
+
+      > picture {
+        --illus-target-width: 50vw;
+      }
+
+      .section {
+        &__content {
+          padding-top: 0;
+          padding-left: calc(map-get($size-scale, s0) * 4.375);
+
+          &::before {
+            top: calc(50% - calc(var(--pattern-height) / 2));
+            left: toRem(-42px);
+          }
+        }
+      }
+    }
+
+    &[data-variant="approach"] {
+      --vertical-space-top: 0;
+      --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 7.5)};
+  
+      background: linear-gradient(
+        to right,
+        var(--neutral-color-1) 40%,
+        var(--red-color-1) 40%
+      );
+    }
+  }
+
+  @include media-breakpoint(xl) {
+    --vertical-space-top: #{calc(map-get($size-scale, s0) * 7)};
+    --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 9.375)};
+    --content-gap: #{calc(map-get($size-scale, s0) * 3)};
+
+    &[data-variant="strategy"] {
+      --vertical-space-top: #{calc(map-get($size-scale, s0) * 12.5)};
+      --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 25)};
+
+      > picture {
+        --illus-max-width: #{toRem(975px)};
+        --illus-target-width: 60vw;
+      }
+
+      .section {
+        &__content {
+          padding-left: calc(map-get($size-scale, s0) * 6);
+
+          &::before {
+            left: toRem(-67px);
+          }
+        }
+      }
+    }
+
+    &[data-variant="approach"] {
+      --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 12.5)};
+    }
+  }
+}

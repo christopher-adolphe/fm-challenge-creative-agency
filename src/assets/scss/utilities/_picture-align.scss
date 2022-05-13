@@ -5,9 +5,10 @@
   &-align-right {
     --illus-min-width: #{toRem(375px)};
     --illus-max-width: #{toRem(895px)};
-    --illus-target-width: 60vw;
+    --illus-target-width: 57vw;
 
     position: relative;
+    overflow: hidden;
 
     > picture {
       width: clamp(
@@ -15,6 +16,10 @@
         var(--illus-target-width),
         var(--illus-max-width)
       );
+
+      > img {
+        width: 100%;
+      }
     }
 
     @include media-breakpoint(md) {
@@ -22,6 +27,10 @@
         position: absolute;
         top: 0;
       }
+    }
+
+    @include media-breakpoint(lg) {
+      --illus-target-width: 63vw;
     }
   }
 

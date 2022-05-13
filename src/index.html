@@ -12,8 +12,8 @@
     <header id="header" class="header"></header>
 
     <main class="page__content">
-      <section class="hero | picture-align-right">
-        <picture class="hero__illustration">
+      <section class="section | picture-align-right" data-variant="hero">
+        <picture class="section__illustration">
           <source media="(max-width: 767px)" srcset="assets/images/home/mobile/image-hero.jpg">
           <source media="(max-width: 800px)" srcset="assets/images/home/tablet/image-hero.jpg">
           <source media="(max-width: 1200px)" srcset="assets/images/home/desktop/image-hero.jpg">
@@ -23,7 +23,7 @@
         <div class="container">
           <div class="grid-cols">
             <div class="grid__item grid__item--span-md-7">
-              <div class="hero__content | stack">
+              <div class="section__content | stack">
                 <h1>Branding & website design agency</h1>
 
                 <p>We specialize in visual storytelling by creating cohesive brand and website design solutions for small businesses, giving lasting impressions to audiences in a digital world.</p>
@@ -35,18 +35,18 @@
         </div>
       </section>
 
-      <section class="picture-align | bg-dark-color-4">
-        <picture>
+      <section class="section | picture-align | bg-dark-color-4" data-variant="strategy">
+        <picture class="section__illustration">
           <source media="(max-width: 767px)" srcset="assets/images/home/mobile/image-strategic.jpg">
           <source media="(max-width: 800px)" srcset="assets/images/home/tablet/image-strategic.jpg">
           <source media="(max-width: 1200px)" srcset="assets/images/home/desktop/image-strategic.jpg">
-          <img src="assets/images/home/desktop/image-strategic.jpg" alt="Design is strategic" />
+          <img src="assets/images/home/desktop/image-strategic@2x.jpg" alt="Design is strategic" />
         </picture>
 
         <div class="container">
           <div class="grid-cols">
-            <div class="grid__item grid__item--span-md-6 grid__item--start-md-6">
-              <div class="stack | text-neutral-color-1">
+            <div class="grid__item grid__item--span-md-6 grid__item--start-md-7">
+              <div class="section__content | stack | text-neutral-color-1 | bg-wave">
                 <h2><span class="text-red-color-1">Design</span> is strategic.</h2>
 
                 <p>“A well-crafted design strategy consistently produces desired outcomes and brand awareness. We are firm believers that success lies in creative collaboration with our clients.”</p>
@@ -54,6 +54,44 @@
                 <a href="/" class="btn" data-variant="link">
                   <span>Schedule a Call</span>
                 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" data-variant="approach">
+        <div class="container">
+          <div class="grid-cols">
+            <div class="grid__item grid__item--span-md-7 grid__item--start-md-6">
+              <div class="stack">
+                <h2>Our approach for creating a winning brand</h2>
+
+                <ul class="card-list | stack">
+                  <li>
+                    <div class="card | stack">
+                      <h3><span>01</span>Brand Strategy</h3>
+
+                      <p>Brand strategy is critical for long-term success. Outshining competitors and capturing the target audience are key.</p>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="card | stack">
+                      <h3><span>02</span>Brand Design</h3>
+
+                      <p>Keeping the brand design unique and meaningful helps in communicating the brand's value effectively.</p>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="card | stack">
+                      <h3><span>03</span>Web Design</h3>
+
+                      <p>A beautifully crafted website is the best tool for brand awareness, and ultimately results in increased revenues.</p>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
