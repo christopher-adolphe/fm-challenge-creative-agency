@@ -39,8 +39,34 @@
 
   &[data-variant="approach"] {
     --vertical-space-top: #{calc(map-get($size-scale, s0) * 6)};
+    --content-gap: #{calc(map-get($size-scale, s0) * 3.125)};
+    --list-gap: #{calc(map-get($size-scale, s0) * 2.5)};
+
+    &::before {
+      display: none;
+    }
 
     background-color: var(--red-color-1);
+
+    .section {
+      &__content {
+        padding-top: 0;
+
+        > * + * {
+          margin-top: var(--content-gap);
+        }
+      }
+
+      &__title {
+        color: var(--neutral-color-1);
+      }
+
+      &__list {
+        > * + * {
+          margin-top: var(--list-gap);
+        }
+      }
+    }
   }
 
   @include media-breakpoint(md) {
@@ -96,12 +122,33 @@
     &[data-variant="approach"] {
       --vertical-space-top: 0;
       --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 7.5)};
+      --content-gap: 0;
+      --title-vertical-space-top: #{toRem(126px)};
+      --title-max-width: 16ch;
+
+      &::before {
+        display: block;
+      }
   
       background: linear-gradient(
         to right,
         var(--neutral-color-1) 40%,
         var(--red-color-1) 40%
       );
+
+      .grid-cols {
+        position: relative;
+      }
+
+      .section {
+        &__title {
+          position: absolute;
+          top: var(--title-vertical-space-top);
+          left: 0;
+          max-width: var(--title-max-width);
+          color: var(--dark-color-5);
+        }
+      }
     }
   }
 
@@ -109,6 +156,7 @@
     --vertical-space-top: #{calc(map-get($size-scale, s0) * 7)};
     --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 9.375)};
     --content-gap: #{calc(map-get($size-scale, s0) * 3)};
+    --list-gap: #{calc(map-get($size-scale, s0) * 3.5)};
 
     &[data-variant="strategy"] {
       --vertical-space-top: #{calc(map-get($size-scale, s0) * 12.5)};
@@ -132,6 +180,8 @@
 
     &[data-variant="approach"] {
       --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 12.5)};
+      --title-vertical-space-top: #{toRem(200px)};
+      --title-max-width: 16ch;
     }
   }
 }

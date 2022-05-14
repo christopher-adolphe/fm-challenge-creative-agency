@@ -29,3 +29,28 @@
     }
   }
 }
+
+.bg-stripe {
+  --stripe-width: 100%;
+  --stripe-height: #{toRem(120px)};
+
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: calc(var(--stripe-height) * -1);
+    left: 0;
+    content: '';
+    width: var(--stripe-width);
+    height: var(--stripe-height);
+    background: linear-gradient(
+      to right,
+      var(--neutral-color-1-opacity-0) 40%,
+      var(--red-color-1) 40%
+    );
+  }
+
+  @include media-breakpoint(xl) {
+    --stripe-height: #{toRem(200px)};
+  }
+}
