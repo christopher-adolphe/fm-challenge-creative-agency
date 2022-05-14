@@ -18,6 +18,14 @@
     }
   }
 
+  &[data-variant="hero"] {
+    .section {
+      &__content > * {
+        max-width: 45ch;
+      }
+    }
+  }
+
   &[data-variant="strategy"] {
     --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 4.5)};
 
