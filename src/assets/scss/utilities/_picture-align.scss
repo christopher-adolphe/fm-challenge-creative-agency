@@ -6,24 +6,61 @@
     --illus-min-width: #{toRem(375px)};
     --illus-max-width: #{toRem(895px)};
     --illus-target-width: 57vw;
+    --caption-vertical-space: #{calc(map-get($size-scale, s0) * 2.25)};
+    --caption-horizontal-space: #{calc(map-get($size-scale, s0) * 2)};
+    --caption-title-font-size: #{toRem(15px)};
+    --caption-sub-title-font-size: #{toRem(15px)};
 
     position: relative;
     overflow: hidden;
 
-    > picture {
+    > figure {
       width: clamp(
         var(--illus-min-width),
         var(--illus-target-width),
         var(--illus-max-width)
       );
 
-      > img {
+      img {
         width: 100%;
+      }
+
+      &.captioned {
+        position: relative;
+
+        figcaption {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+        }
+      }
+    }
+
+    figcaption {
+      align-items: flex-end;
+      width: 100%;
+      padding: var(--caption-vertical-space) var(--caption-horizontal-space);
+      background: linear-gradient(
+        to top,
+        var(--dark-color-4) 0%,
+        transparent 100%
+      );
+
+      > * + * {
+        margin-top: 0;
+      }
+
+      span {
+        font-size: var(--caption-title-font-size);
+
+        &:first-child {
+          font-weight: var(--font-weight-extra-bold);
+        }
       }
     }
 
     @include media-breakpoint(md) {
-      > picture {
+      > figure {
         position: absolute;
         top: 0;
       }
@@ -32,11 +69,25 @@
     @include media-breakpoint(lg) {
       --illus-target-width: 63vw;
     }
+
+    @include media-breakpoint(xl) {
+      --caption-title-font-size: #{toRem(20px)};
+      --caption-sub-title-font-size: #{toRem(18px)};
+
+      figcaption {
+
+        span {
+          &:last-child {
+            font-size: var(--caption-sub-title-font-size);
+          }
+        }
+      }
+    }
   }
 
   &-align {
     @include media-breakpoint(md) {
-      > picture {
+      > figure {
         left: 0;
       }
     }
@@ -44,7 +95,7 @@
 
   &-align-right {
     @include media-breakpoint(md) {
-      > picture {
+      > figure {
         right: 0;
         z-index: -1;
       }

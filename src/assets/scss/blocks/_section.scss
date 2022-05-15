@@ -3,6 +3,9 @@
 .section {
   --vertical-space-top: 0;
   --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 6)};
+  --content-vertical-space-top: #{calc(map-get($size-scale, s0) * 3.5)};
+  --content-vertical-space-bottom: 0;
+  --content-horizontal-space-left: 0;
   --content-gap: #{calc(map-get($size-scale, s0) * 2.5)};
 
   padding-top: var(--vertical-space-top);
@@ -10,7 +13,7 @@
 
   &__content {
     align-items: flex-start;
-    padding-top: calc(map-get($size-scale, s0) * 3.5);
+    padding-top: var(--content-vertical-space-top);
     z-index: 2;
 
     > * + * {
@@ -26,13 +29,12 @@
     }
   }
 
-  &[data-variant="strategy"] {
+  &[data-variant="about"] {
     --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 4.5)};
+    --content-vertical-space-top: #{calc(map-get($size-scale, s0) * 4.5)};
 
     .section {
       &__content {
-        padding-top: calc(map-get($size-scale, s0) * 4.5);
-
         &::before {
           top: -#{map-get($size-scale, s0)};
           left: 0;
@@ -45,8 +47,9 @@
     }
   }
 
-  &[data-variant="approach"] {
+  &[data-variant="services"] {
     --vertical-space-top: #{calc(map-get($size-scale, s0) * 6)};
+    --content-vertical-space-top: 0;
     --content-gap: #{calc(map-get($size-scale, s0) * 3.125)};
     --list-gap: #{calc(map-get($size-scale, s0) * 2.5)};
 
@@ -58,8 +61,6 @@
 
     .section {
       &__content {
-        padding-top: 0;
-
         > * + * {
           margin-top: var(--content-gap);
         }
@@ -77,14 +78,40 @@
     }
   }
 
+  &[data-variant="projects"] {
+    --vertical-space-top: 0;
+    --vertical-space-bottom: 0;
+    --content-vertical-space-top: #{calc(map-get($size-scale, s0) * 4)};
+    --content-vertical-space-bottom: #{calc(map-get($size-scale, s0) * 8)};
+    --bg-gradient-start: 100%;
+    --bg-gradient-end: 0%;
+
+    background: linear-gradient(
+      to bottom,
+      var(--dark-color-4) var(--bg-gradient-start),
+      transparent var(--bg-gradient-end)
+    );
+
+    > figure {
+      z-index: 0;
+    }
+
+    .section {
+      &__content {
+        padding-bottom: var(--content-vertical-space-bottom);
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+
   @include media-breakpoint(md) {
     --vertical-space-top: #{calc(map-get($size-scale, s0) * 4.75)};
     --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 6)};
+    --content-vertical-space-top: 0;
     --content-gap: #{calc(map-get($size-scale, s0) * 2)};
-
-    &__content {
-      padding-top: 0;
-    }
 
     &[data-variant="hero"] {
       .section {
@@ -106,18 +133,19 @@
       }
     }
 
-    &[data-variant="strategy"] {
+    &[data-variant="about"] {
       --vertical-space-top: #{calc(map-get($size-scale, s0) * 7.5)};
       --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 13.25)};
+      --content-vertical-space-top: 0;
+      --content-horizontal-space-left: #{calc(map-get($size-scale, s0) * 4.375)};
 
-      > picture {
+      > figure {
         --illus-target-width: 50vw;
       }
 
       .section {
         &__content {
-          padding-top: 0;
-          padding-left: calc(map-get($size-scale, s0) * 4.375);
+          padding-left: var(--content-horizontal-space-left);
 
           &::before {
             top: calc(50% - calc(var(--pattern-height) / 2));
@@ -127,7 +155,7 @@
       }
     }
 
-    &[data-variant="approach"] {
+    &[data-variant="services"] {
       --vertical-space-top: 0;
       --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 7.5)};
       --content-gap: 0;
@@ -158,6 +186,11 @@
         }
       }
     }
+
+    &[data-variant="projects"] {
+      --bg-gradient-start: 75%;
+      --bg-gradient-end: 75%;
+    }
   }
 
   @include media-breakpoint(xl) {
@@ -166,18 +199,19 @@
     --content-gap: #{calc(map-get($size-scale, s0) * 3)};
     --list-gap: #{calc(map-get($size-scale, s0) * 3.5)};
 
-    &[data-variant="strategy"] {
+    &[data-variant="about"] {
       --vertical-space-top: #{calc(map-get($size-scale, s0) * 12.5)};
       --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 25)};
+      --content-horizontal-space-left: #{calc(map-get($size-scale, s0) * 6)};
 
-      > picture {
+      > figure {
         --illus-max-width: #{toRem(975px)};
         --illus-target-width: 60vw;
       }
 
       .section {
         &__content {
-          padding-left: calc(map-get($size-scale, s0) * 6);
+          padding-left: var(--content-horizontal-space-left);
 
           &::before {
             left: toRem(-67px);
@@ -186,10 +220,18 @@
       }
     }
 
-    &[data-variant="approach"] {
+    &[data-variant="services"] {
       --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 12.5)};
       --title-vertical-space-top: #{toRem(200px)};
       --title-max-width: 16ch;
     }
   }
+
+  // @include media-breakpoint(xxl) {
+  //   &[data-variant="about"] {
+  //     > figure {
+  //       --illus-target-width: 60vw;
+  //     }
+  //   }
+  // }
 }
