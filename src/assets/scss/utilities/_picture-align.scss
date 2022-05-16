@@ -14,7 +14,7 @@
     position: relative;
     overflow: hidden;
 
-    > figure {
+    figure {
       width: clamp(
         var(--illus-min-width),
         var(--illus-target-width),
@@ -22,7 +22,13 @@
       );
 
       img {
-        width: 100%;
+        // width: 100%;
+        // width: clamp(
+        //   var(--illus-min-width),
+        //   var(--illus-target-width),
+        //   var(--illus-max-width)
+        // );
+        object-fit: fill;
       }
 
       &.captioned {
@@ -60,7 +66,7 @@
     }
 
     @include media-breakpoint(md) {
-      > figure {
+      .picture__content {
         position: absolute;
         top: 0;
       }
@@ -87,7 +93,7 @@
 
   &-align {
     @include media-breakpoint(md) {
-      > figure {
+      .picture__content {
         left: 0;
       }
     }
@@ -95,7 +101,7 @@
 
   &-align-right {
     @include media-breakpoint(md) {
-      > figure {
+      .picture__content {
         right: 0;
         z-index: -1;
       }

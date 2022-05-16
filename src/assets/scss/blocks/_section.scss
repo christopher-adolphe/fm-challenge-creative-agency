@@ -138,10 +138,7 @@
       --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 13.25)};
       --content-vertical-space-top: 0;
       --content-horizontal-space-left: #{calc(map-get($size-scale, s0) * 4.375)};
-
-      > figure {
-        --illus-target-width: 50vw;
-      }
+      --illus-target-width: 50vw;
 
       .section {
         &__content {
@@ -188,8 +185,28 @@
     }
 
     &[data-variant="projects"] {
+      --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 7.5)};
       --bg-gradient-start: 75%;
       --bg-gradient-end: 75%;
+      --illus-max-width: #{toRem(1152px)};
+      --illus-target-width: 60vw;
+      --illus-min-height: #{toRem(404px)};
+      --illus-max-height: #{toRem(728px)};
+      --illus-target-height: 47vh;
+      --content-vertical-space-top: #{calc(map-get($size-scale, s0) * 6.25)};
+      --content-vertical-space-bottom: #{calc(map-get($size-scale, s0) * 10.75)};
+
+      .picture__content {
+        z-index: 1;
+      }
+
+      figure > img {
+        height: clamp(
+          var(--illus-min-height),
+          var(--illus-target-height),
+          var(--illus-max-height)
+        );
+      }
     }
   }
 
@@ -203,11 +220,8 @@
       --vertical-space-top: #{calc(map-get($size-scale, s0) * 12.5)};
       --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 25)};
       --content-horizontal-space-left: #{calc(map-get($size-scale, s0) * 6)};
-
-      > figure {
-        --illus-max-width: #{toRem(975px)};
-        --illus-target-width: 60vw;
-      }
+      --illus-max-width: #{toRem(975px)};
+      --illus-target-width: 60vw;
 
       .section {
         &__content {
