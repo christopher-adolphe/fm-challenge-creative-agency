@@ -54,3 +54,21 @@
     --stripe-height: #{toRem(200px)};
   }
 }
+
+.bg-stripe-vertical {
+  --stripe-width: #{toRem(180px)};
+  --stripe-height: 100%;
+
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: '';
+    width: var(--stripe-width);
+    height: var(--stripe-height);
+    background-color: var(--dark-color-4);
+    z-index: -1;
+  }
+}

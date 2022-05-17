@@ -15,20 +15,20 @@
     overflow: hidden;
 
     figure {
-      width: clamp(
-        var(--illus-min-width),
-        var(--illus-target-width),
-        var(--illus-max-width)
-      );
+      // width: clamp(
+      //   var(--illus-min-width),
+      //   var(--illus-target-width),
+      //   var(--illus-max-width)
+      // );
 
       img {
         // width: 100%;
-        // width: clamp(
-        //   var(--illus-min-width),
-        //   var(--illus-target-width),
-        //   var(--illus-max-width)
-        // );
-        object-fit: fill;
+        width: clamp(
+          var(--illus-min-width),
+          var(--illus-target-width),
+          var(--illus-max-width)
+        );
+        object-fit: cover;
       }
 
       &.captioned {
