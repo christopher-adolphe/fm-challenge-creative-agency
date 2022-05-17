@@ -141,13 +141,13 @@
           );
         }
 
-        img {
-          height: clamp(
-            var(--illus-min-height),
-            var(--illus-target-height),
-            var(--illus-max-height)
-          );
-        }
+        // img {
+        //   height: clamp(
+        //     var(--illus-min-height),
+        //     var(--illus-target-height),
+        //     var(--illus-max-height)
+        //   );
+        // }
       }
     }
 
