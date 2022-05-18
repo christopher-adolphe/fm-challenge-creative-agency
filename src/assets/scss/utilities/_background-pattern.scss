@@ -32,7 +32,9 @@
 
 .bg-stripe {
   --stripe-width: 100%;
-  --stripe-height: #{toRem(120px)};
+  --stripe-height: #{toRem(100px)};
+  --bg-gradient-start: 42.75%;
+  --bg-gradient-end: 42.75%;
 
   position: relative;
 
@@ -45,18 +47,18 @@
     height: var(--stripe-height);
     background: linear-gradient(
       to right,
-      var(--neutral-color-1-opacity-0) 40%,
-      var(--red-color-1) 40%
+      var(--neutral-color-1-opacity-0) var(--bg-gradient-start),
+      var(--red-color-1) var(--bg-gradient-end)
     );
   }
 
-  @include media-breakpoint(xl) {
-    --stripe-height: #{toRem(200px)};
-  }
+  // @include media-breakpoint(xl) {
+  //   --stripe-height: #{toRem(200px)};
+  // }
 }
 
 .bg-stripe-vertical {
-  --stripe-width: #{toRem(180px)};
+  --stripe-width: #{toRem(70px)};
   --stripe-height: 100%;
 
   position: relative;
@@ -70,5 +72,9 @@
     height: var(--stripe-height);
     background-color: var(--dark-color-4);
     z-index: -1;
+  }
+
+  @include media-breakpoint(xl) {
+    --stripe-width: #{toRem(180px)};
   }
 }

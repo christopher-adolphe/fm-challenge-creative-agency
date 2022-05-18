@@ -22,8 +22,6 @@
   }
 
   &[data-variant="hero"] {
-    --illus-max-width: #{toRem(960px)};
-
     .section {
       &__content > * {
         max-width: 45ch;
@@ -32,6 +30,10 @@
 
     h1 {
       line-height: 1.2;
+    }
+
+    p {
+      line-height: 1.7;
     }
   }
 
@@ -98,10 +100,6 @@
       transparent var(--bg-gradient-end)
     );
 
-    // > figure {
-    //   z-index: 0;
-    // }
-
     .section {
       &__content {
         padding-bottom: var(--content-vertical-space-bottom);
@@ -116,17 +114,15 @@
 
   @include media-breakpoint(md) {
     --vertical-space-top: #{calc(map-get($size-scale, s0) * 4.75)};
-    --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 6)};
+    --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 9.375)};
     --content-vertical-space-top: 0;
     --content-gap: #{calc(map-get($size-scale, s0) * 2)};
 
     &[data-variant="hero"] {
+      --illus-max-width: #{toRem(920px)};
       --illus-target-width: 70vw;
-      --illus-min-height: #{toRem(200px)};
-      --illus-max-height: #{toRem(800px)};
-      --illus-target-height: 60vh;
 
-      figure {
+      picture {
         &::before {
           position: absolute;
           top: 0;
@@ -140,14 +136,6 @@
             var(--neutral-color-1-opacity-0) 10%
           );
         }
-
-        // img {
-        //   height: clamp(
-        //     var(--illus-min-height),
-        //     var(--illus-target-height),
-        //     var(--illus-max-height)
-        //   );
-        // }
       }
     }
 
@@ -173,6 +161,8 @@
     &[data-variant="services"] {
       --vertical-space-top: 0;
       --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 7.5)};
+      --bg-gradient-start: 42.75%;
+      --bg-gradient-end: 42.75%;
       --content-gap: 0;
       --title-vertical-space-top: #{toRem(126px)};
       --title-max-width: 16ch;
@@ -183,8 +173,8 @@
   
       background: linear-gradient(
         to right,
-        var(--neutral-color-1) 40%,
-        var(--red-color-1) 40%
+        var(--neutral-color-1) var(--bg-gradient-start),
+        var(--red-color-1) var(--bg-gradient-end)
       );
 
       .grid-cols {
@@ -204,9 +194,10 @@
 
     &[data-variant="projects"] {
       --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 7.5)};
-      --bg-gradient-start: 75%;
-      --bg-gradient-end: 75%;
+      --bg-gradient-start: 75.1%;
+      --bg-gradient-end: 75.1%;
       --illus-max-width: #{toRem(1152px)};
+      --illus-target-width: 60vw;
       --content-vertical-space-top: #{calc(map-get($size-scale, s0) * 6.25)};
       --content-vertical-space-bottom: #{calc(map-get($size-scale, s0) * 10.75)};
 
@@ -219,7 +210,7 @@
           &::before {
             top: toRem(126px);
             left: unset;
-            right: toRem(-67px);
+            right: toRem(-32px);
             display: block;
           }
         }
@@ -229,16 +220,20 @@
 
   @include media-breakpoint(xl) {
     --vertical-space-top: #{calc(map-get($size-scale, s0) * 7)};
-    --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 9.375)};
+    --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 10)};
     --content-gap: #{calc(map-get($size-scale, s0) * 3)};
     --list-gap: #{calc(map-get($size-scale, s0) * 3.5)};
 
+    &[data-variant="hero"] {
+      --illus-target-width: 77vw;
+    }
+
     &[data-variant="about"] {
-      --vertical-space-top: #{calc(map-get($size-scale, s0) * 12.5)};
-      --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 25)};
+      --vertical-space-top: #{calc(map-get($size-scale, s0) * 5.3125)};
+      --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 11.875)};
       --content-horizontal-space-left: #{calc(map-get($size-scale, s0) * 6)};
-      --illus-max-width: #{toRem(975px)};
-      --illus-target-width: 60vw;
+      --illus-max-width: #{toRem(735px)};
+      --illus-target-width: 51.5vw;
 
       .section {
         &__content {
@@ -253,6 +248,9 @@
 
     &[data-variant="services"] {
       --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 12.5)};
+      --bg-gradient-start: 35.5%;
+      --bg-gradient-end: 35.5%;
+      --stripe-height: #{toRem(100px)};
       --title-vertical-space-top: #{toRem(200px)};
       --title-max-width: 16ch;
     }
@@ -268,17 +266,61 @@
         &__content {
           &::before {
             top: toRem(186px);
+            right: toRem(-67px);
           }
         }
       }
     }
   }
 
-  // @include media-breakpoint(xxl) {
-  //   &[data-variant="about"] {
-  //     > figure {
-  //       --illus-target-width: 60vw;
-  //     }
-  //   }
-  // }
+  @include media-breakpoint(xxl) {
+    --vertical-space-top: #{calc(map-get($size-scale, s0) * 7)};
+    --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 10)};
+    --content-gap: #{calc(map-get($size-scale, s0) * 3)};
+    --list-gap: #{calc(map-get($size-scale, s0) * 3.5)};
+
+    &[data-variant="about"] {
+      --vertical-space-top: #{calc(map-get($size-scale, s0) * 12.5)};
+      --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 21.875)};
+      --content-horizontal-space-left: #{calc(map-get($size-scale, s0) * 6)};
+      --illus-max-width: #{toRem(735px)};
+      --illus-target-width: 60vw;
+
+      .section {
+        &__content {
+          padding-left: var(--content-horizontal-space-left);
+
+          &::before {
+            left: toRem(-67px);
+          }
+        }
+      }
+    }
+
+    &[data-variant="services"] {
+      --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 12.5)};
+      --bg-gradient-start: 38%;
+      --bg-gradient-end: 38%;
+      --stripe-height: #{toRem(200px)};
+      --title-vertical-space-top: #{toRem(200px)};
+      --title-max-width: 16ch;
+    }
+
+    &[data-variant="projects"] {
+      --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 24.5)};
+      --content-vertical-space-top: #{calc(map-get($size-scale, s0) * 9.5)};
+      --content-vertical-space-bottom: #{calc(map-get($size-scale, s0) * 14.5)};
+      --bg-gradient-start: 57.9%;
+      --bg-gradient-end: 57.9%;
+
+      .section {
+        &__content {
+          &::before {
+            top: toRem(186px);
+            right: toRem(-67px);
+          }
+        }
+      }
+    }
+  }
 }

@@ -14,20 +14,20 @@
     position: relative;
     overflow: hidden;
 
-    figure {
-      // width: clamp(
-      //   var(--illus-min-width),
-      //   var(--illus-target-width),
-      //   var(--illus-max-width)
-      // );
+    picture {
+      width: clamp(
+        var(--illus-min-width),
+        var(--illus-target-width),
+        var(--illus-max-width)
+      );
 
       img {
-        // width: 100%;
-        width: clamp(
-          var(--illus-min-width),
-          var(--illus-target-width),
-          var(--illus-max-width)
-        );
+        width: 100%;
+        // width: clamp(
+        //   var(--illus-min-width),
+        //   var(--illus-target-width),
+        //   var(--illus-max-width)
+        // );
         object-fit: cover;
       }
 

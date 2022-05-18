@@ -14,12 +14,13 @@
     <main class="page__content">
       <section class="section | picture-align-right" data-variant="hero">
         <div class="picture__content">
-          <figure>
-            <source media="(max-width: 767px)" srcset="assets/images/home/mobile/image-hero.jpg">
-            <source media="(max-width: 800px)" srcset="assets/images/home/tablet/image-hero.jpg">
-            <source media="(max-width: 1200px)" srcset="assets/images/home/desktop/image-hero.jpg">
-            <img src="assets/images/home/desktop/image-hero.jpg" alt="Branding & website design agency" />
-          </figure>
+          <picture>
+            <source media="(min-width: 1440px)" srcset="assets/images/home/desktop/image-hero@2x.jpg">
+            <source media="(min-width: 1110px)" srcset="assets/images/home/desktop/image-hero.jpg">
+            <source media="(min-width: 768px)" srcset="assets/images/home/tablet/image-hero.jpg">
+            <source srcset="assets/images/home/mobile/image-hero.jpg">
+            <img src="assets/images/home/mobile/image-hero.jpg" alt="Branding & website design agency" />
+          </picture>
         </div>
 
         <div class="container">
@@ -39,12 +40,13 @@
 
       <section class="section | picture-align | bg-dark-color-4" data-variant="about">
         <div class="picture__content">
-          <figure class="section__illustration">
-            <source media="(max-width: 767px)" srcset="assets/images/home/mobile/image-strategic.jpg">
-            <source media="(max-width: 800px)" srcset="assets/images/home/tablet/image-strategic.jpg">
-            <source media="(max-width: 1200px)" srcset="assets/images/home/desktop/image-strategic.jpg">
-            <img src="assets/images/home/desktop/image-strategic@2x.jpg" alt="Design is strategic" />
-          </figure>
+          <picture>
+            <source media="(min-width: 1440px)" srcset="assets/images/home/desktop/image-strategic@2x.jpg">
+            <source media="(min-width: 1110px)" srcset="assets/images/home/desktop/image-strategic.jpg">
+            <source media="(min-width: 768px)" srcset="assets/images/home/tablet/image-strategic.jpg">
+            <source srcset="assets/images/home/mobile/image-strategic.jpg">
+            <img src="assets/images/home/mobile/image-strategic.jpg" alt="Design is strategic" />
+          </picture>
         </div>
 
         <div class="container">
@@ -67,7 +69,7 @@
       <section class="section | bg-stripe" data-variant="services">
         <div class="container">
           <div class="grid-cols">
-            <div class="grid__item grid__item--span-md-7 grid__item--start-md-6 grid__item--span-xl-5 grid__item--start-xl-8">
+            <div class="grid__item grid__item--span-md-6 grid__item--start-md-7 grid__item--span-xl-5 grid__item--start-xl-7">
               <div class="section__content | stack">
                 <h2 class="section__title">Our approach for creating a winning brand</h2>
 
@@ -119,17 +121,18 @@
 
       <section class="section | picture-align-right" data-variant="projects">
         <div class="picture__content">
-          <figure class="captioned">
-            <source media="(max-width: 767px)" srcset="assets/images/home/mobile/image-slide-1.jpg">
-            <source media="(max-width: 800px)" srcset="assets/images/home/tablet/image-slide-1.jpg">
-            <source media="(max-width: 1200px)" srcset="assets/images/home/desktop/image-slide-1.jpg">
-            <img src="assets/images/home/desktop/image-slide-1@2x.jpg" alt="Lean Product Roadmap" />
+          <picture class="captioned">
+            <source media="(min-width: 1440px)" srcset="assets/images/home/desktop/image-slide-1@2x.jpg">
+            <source media="(min-width: 1110px)" srcset="assets/images/home/desktop/image-slide-1.jpg">
+            <source media="(min-width: 768px)" srcset="assets/images/home/tablet/image-slide-1.jpg">
+            <source srcset="assets/images/home/mobile/image-slide-1.jpg">
+            <img src="assets/images/home/mobile/image-slide-1.jpg" alt="Lean Product Roadmap" />
   
             <figcaption class="stack | text-neutral-color-1">
               <span>Lean Product Roadmap</span>
               <span>2019 Project</span>
             </figcaption>
-          </figure>
+          </picture>
         </div>
 
         <div class="container">
