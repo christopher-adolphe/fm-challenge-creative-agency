@@ -1,29 +1,41 @@
 @use '../abstracts/' as *;
 
 .section {
-  --vertical-space-top: 0;
-  --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 6)};
+  --vertical-space-top: #{calc(map-get($size-scale, s0) * 4.75)};
+  --horizontal-space-left: 0;
   --content-vertical-space-top: #{calc(map-get($size-scale, s0) * 3.5)};
   --content-vertical-space-bottom: 0;
   --content-horizontal-space-left: 0;
   --content-gap: #{calc(map-get($size-scale, s0) * 2.5)};
 
-  padding-top: var(--vertical-space-top);
-  padding-bottom: var(--vertical-space-bottom);
+  &__image {
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
 
   &__content {
     align-items: flex-start;
-    padding-top: var(--content-vertical-space-top);
-    z-index: 2;
 
     > * + * {
       margin-top: var(--content-gap);
     }
   }
 
+  @each $breakpoint, $value in $breakpoints {
+    @include media-breakpoint(#{$breakpoint}) {
+      @if $breakpoint != sm {
+        --horizontal-space-left: #{calc(50% - #{calc(map-get($containers, #{$breakpoint}) / 2)})};
+      }
+    }
+  }
+
   &[data-variant="hero"] {
-    .section {
-      &__content > * {
+    .section__content {
+      padding-top: var(--content-vertical-space-top);
+
+      > * {
         max-width: 45ch;
       }
     }
@@ -37,290 +49,43 @@
     }
   }
 
-  &[data-variant="about"] {
-    --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 4.5)};
-    --content-vertical-space-top: #{calc(map-get($size-scale, s0) * 4.5)};
-
-    .section {
-      &__content {
-        &::before {
-          top: -#{map-get($size-scale, s0)};
-          left: 0;
-        }
-
-        > *:not(a) {
-          color: inherit;
-        }
-      }
-    }
-  }
-
-  &[data-variant="services"] {
-    --vertical-space-top: #{calc(map-get($size-scale, s0) * 6)};
-    --content-vertical-space-top: 0;
-    --content-gap: #{calc(map-get($size-scale, s0) * 3.125)};
-    --list-gap: #{calc(map-get($size-scale, s0) * 2.5)};
-
-    &::before {
-      display: none;
-    }
-
-    background-color: var(--red-color-1);
-
-    .section {
-      &__content {
-        > * + * {
-          margin-top: var(--content-gap);
-        }
-      }
-
-      &__title {
-        color: var(--neutral-color-1);
-      }
-
-      &__list {
-        > * + * {
-          margin-top: var(--list-gap);
-        }
-      }
-    }
-  }
-
-  &[data-variant="projects"] {
-    --vertical-space-top: 0;
-    --vertical-space-bottom: 0;
-    --content-vertical-space-top: #{calc(map-get($size-scale, s0) * 4)};
-    --content-vertical-space-bottom: #{calc(map-get($size-scale, s0) * 8)};
-    --bg-gradient-start: 100%;
-    --bg-gradient-end: 0%;
-
-    background: linear-gradient(
-      to bottom,
-      var(--dark-color-4) var(--bg-gradient-start),
-      transparent var(--bg-gradient-end)
-    );
-
-    .section {
-      &__content {
-        padding-bottom: var(--content-vertical-space-bottom);
-
-        &::before {
-          display: none;
-          background-color: var(--neutral-color-1);
-        }
-      }
-    }
-  }
-
   @include media-breakpoint(md) {
-    --vertical-space-top: #{calc(map-get($size-scale, s0) * 4.75)};
-    --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 9.375)};
-    --content-vertical-space-top: 0;
-    --content-gap: #{calc(map-get($size-scale, s0) * 2)};
-
     &[data-variant="hero"] {
-      --illus-max-width: #{toRem(920px)};
-      --illus-target-width: 70vw;
-
-      picture {
-        &::before {
-          position: absolute;
-          top: 0;
-          left: 0;
-          content: '';
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(
-            to right,
-            var(--neutral-color-1) 0%,
-            var(--neutral-color-1-opacity-0) 10%
-          );
-        }
-      }
-    }
-
-    &[data-variant="about"] {
-      --vertical-space-top: #{calc(map-get($size-scale, s0) * 7.5)};
-      --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 13.25)};
       --content-vertical-space-top: 0;
-      --content-horizontal-space-left: #{calc(map-get($size-scale, s0) * 4.375)};
-      --illus-target-width: 50vw;
 
-      .section {
-        &__content {
-          padding-left: var(--content-horizontal-space-left);
+      position: relative;
+
+      .section__image {
+        picture {
+          position: relative;
 
           &::before {
-            top: calc(50% - calc(var(--pattern-height) / 2));
-            left: toRem(-42px);
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+              to right,
+              var(--neutral-color-1) 0%,
+              var(--neutral-color-1-opacity-0) 10%
+            );
           }
         }
       }
-    }
 
-    &[data-variant="services"] {
-      --vertical-space-top: 0;
-      --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 7.5)};
-      --bg-gradient-start: 42.75%;
-      --bg-gradient-end: 42.75%;
-      --content-gap: 0;
-      --title-vertical-space-top: #{toRem(126px)};
-      --title-max-width: 16ch;
-
-      &::before {
-        display: block;
-      }
-  
-      background: linear-gradient(
-        to right,
-        var(--neutral-color-1) var(--bg-gradient-start),
-        var(--red-color-1) var(--bg-gradient-end)
-      );
-
-      .grid-cols {
-        position: relative;
-      }
-
-      .section {
-        &__title {
-          position: absolute;
-          top: var(--title-vertical-space-top);
-          left: 0;
-          max-width: var(--title-max-width);
-          color: var(--dark-color-5);
-        }
-      }
-    }
-
-    &[data-variant="projects"] {
-      --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 7.5)};
-      --bg-gradient-start: 75.1%;
-      --bg-gradient-end: 75.1%;
-      --illus-max-width: #{toRem(1152px)};
-      --illus-target-width: 60vw;
-      --content-vertical-space-top: #{calc(map-get($size-scale, s0) * 6.25)};
-      --content-vertical-space-bottom: #{calc(map-get($size-scale, s0) * 10.75)};
-
-      .picture__content {
-        z-index: 1;
-      }
-
-      .section {
-        &__content {
-          &::before {
-            top: toRem(126px);
-            left: unset;
-            right: toRem(-32px);
-            display: block;
-          }
-        }
+      .container {
+        position: absolute;
+        top: var(--vertical-space-top);
+        left: var(--horizontal-space-left);
       }
     }
   }
 
   @include media-breakpoint(xl) {
-    --vertical-space-top: #{calc(map-get($size-scale, s0) * 7)};
-    --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 10)};
-    --content-gap: #{calc(map-get($size-scale, s0) * 3)};
-    --list-gap: #{calc(map-get($size-scale, s0) * 3.5)};
-
     &[data-variant="hero"] {
-      --illus-target-width: 77vw;
-    }
-
-    &[data-variant="about"] {
-      --vertical-space-top: #{calc(map-get($size-scale, s0) * 5.3125)};
-      --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 11.875)};
-      --content-horizontal-space-left: #{calc(map-get($size-scale, s0) * 6)};
-      --illus-max-width: #{toRem(735px)};
-      --illus-target-width: 51.5vw;
-
-      .section {
-        &__content {
-          padding-left: var(--content-horizontal-space-left);
-
-          &::before {
-            left: toRem(-67px);
-          }
-        }
-      }
-    }
-
-    &[data-variant="services"] {
-      --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 12.5)};
-      --bg-gradient-start: 35.5%;
-      --bg-gradient-end: 35.5%;
-      --stripe-height: #{toRem(100px)};
-      --title-vertical-space-top: #{toRem(200px)};
-      --title-max-width: 16ch;
-    }
-
-    &[data-variant="projects"] {
-      --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 24.5)};
-      --content-vertical-space-top: #{calc(map-get($size-scale, s0) * 9.5)};
-      --content-vertical-space-bottom: #{calc(map-get($size-scale, s0) * 14.5)};
-      --bg-gradient-start: 57.9%;
-      --bg-gradient-end: 57.9%;
-
-      .section {
-        &__content {
-          &::before {
-            top: toRem(186px);
-            right: toRem(-67px);
-          }
-        }
-      }
-    }
-  }
-
-  @include media-breakpoint(xxl) {
-    --vertical-space-top: #{calc(map-get($size-scale, s0) * 7)};
-    --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 10)};
-    --content-gap: #{calc(map-get($size-scale, s0) * 3)};
-    --list-gap: #{calc(map-get($size-scale, s0) * 3.5)};
-
-    &[data-variant="about"] {
-      --vertical-space-top: #{calc(map-get($size-scale, s0) * 12.5)};
-      --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 21.875)};
-      --content-horizontal-space-left: #{calc(map-get($size-scale, s0) * 6)};
-      --illus-max-width: #{toRem(735px)};
-      --illus-target-width: 60vw;
-
-      .section {
-        &__content {
-          padding-left: var(--content-horizontal-space-left);
-
-          &::before {
-            left: toRem(-67px);
-          }
-        }
-      }
-    }
-
-    &[data-variant="services"] {
-      --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 12.5)};
-      --bg-gradient-start: 38%;
-      --bg-gradient-end: 38%;
-      --stripe-height: #{toRem(200px)};
-      --title-vertical-space-top: #{toRem(200px)};
-      --title-max-width: 16ch;
-    }
-
-    &[data-variant="projects"] {
-      --vertical-space-bottom: #{calc(map-get($size-scale, s0) * 24.5)};
-      --content-vertical-space-top: #{calc(map-get($size-scale, s0) * 9.5)};
-      --content-vertical-space-bottom: #{calc(map-get($size-scale, s0) * 14.5)};
-      --bg-gradient-start: 57.9%;
-      --bg-gradient-end: 57.9%;
-
-      .section {
-        &__content {
-          &::before {
-            top: toRem(186px);
-            right: toRem(-67px);
-          }
-        }
-      }
+      --vertical-space-top: #{calc(map-get($size-scale, s0) * 7)};
     }
   }
 }
