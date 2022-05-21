@@ -160,6 +160,8 @@
       &::before {
         display: none;
         background-color: var(--neutral-color-1);
+        transform-origin: center;
+        transform: rotateX(180deg);
       }
 
       &::after {
