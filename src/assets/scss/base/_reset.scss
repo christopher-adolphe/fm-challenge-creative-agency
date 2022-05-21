@@ -140,7 +140,7 @@ body {
 
 p {
   color: var(--dark-color-4);
-  font-size: toRem(18px);
+  font-size: toRem(15px);
 }
 
 a {
@@ -152,4 +152,10 @@ a {
 :focus {
   outline: var(--dark-color-4) dotted 3px;
   outline-offset: 0.15rem;
+}
+
+@include media-breakpoint(xl) {
+  p {
+    font-size: toRem(18px);
+  }
 }

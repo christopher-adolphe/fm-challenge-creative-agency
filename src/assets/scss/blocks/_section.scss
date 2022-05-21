@@ -3,20 +3,64 @@
 .section {
   --vertical-space-top: #{calc(map-get($size-scale, s0) * 4.75)};
   --horizontal-space-left: 0;
+  --img-min-height: #{toRem(200px)};
+  --img-max-height: #{toRem(800px)};
+  --img-target-height: #{toRem(200px)};
   --content-vertical-space-top: #{calc(map-get($size-scale, s0) * 3.5)};
-  --content-vertical-space-bottom: 0;
+  --content-vertical-space-bottom: #{calc(map-get($size-scale, s0) * 6)};
   --content-horizontal-space-left: 0;
   --content-gap: #{calc(map-get($size-scale, s0) * 2.5)};
+  --caption-vertical-space: #{calc(map-get($size-scale, s0) * 2.25)};
+  --caption-horizontal-space: #{calc(map-get($size-scale, s0) * 2)};
+  --caption-title-font-size: #{toRem(15px)};
+  --caption-sub-title-font-size: #{toRem(15px)};
 
   &__image {
+    picture {
+      position: relative;
+    }
+
     img {
       width: 100%;
+      height: clamp(
+        var(--img-min-height),
+        var(--img-target-height),
+        var(--img-max-height)
+      );
       object-fit: cover;
+    }
+
+    figcaption {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      align-items: flex-end;
+      width: 100%;
+      padding: var(--caption-vertical-space) var(--caption-horizontal-space);
+      background: linear-gradient(
+        to top,
+        var(--dark-color-4) 0%,
+        transparent 100%
+      );
+
+      > * + * {
+        margin-top: 0;
+      }
+
+      span {
+        font-size: var(--caption-title-font-size);
+
+        &:first-child {
+          font-weight: var(--font-weight-extra-bold);
+        }
+      }
     }
   }
 
   &__content {
     align-items: flex-start;
+    padding-top: var(--content-vertical-space-top);
+    padding-bottom: var(--content-vertical-space-bottom);
 
     > * + * {
       margin-top: var(--content-gap);
@@ -33,8 +77,6 @@
 
   &[data-variant="hero"] {
     .section__content {
-      padding-top: var(--content-vertical-space-top);
-
       > * {
         max-width: 45ch;
       }
@@ -49,9 +91,96 @@
     }
   }
 
+  &[data-variant="about"] {
+    --img-max-height: #{toRem(984px)};
+    --content-vertical-space-top: #{calc(map-get($size-scale, s0) * 4.5)};
+    --content-vertical-space-bottom: #{calc(map-get($size-scale, s0) * 4.5)};
+
+    .section__content {
+      &::before {
+        top: -#{map-get($size-scale, s0)};
+        left: 0;
+      }
+
+      > *:not(a) {
+        color: inherit;
+      }
+    }
+  }
+
+  &[data-variant="services"] {
+    --vertical-space-top: #{calc(map-get($size-scale, s0) * 6)};
+    --content-vertical-space-top: 0;
+    --content-gap: #{calc(map-get($size-scale, s0) * 3.125)};
+    --list-gap: #{calc(map-get($size-scale, s0) * 2.5)};
+
+    padding-top: var(--vertical-space-top);
+    padding-bottom: var(--vertical-space-bottom);
+    background-color: var(--red-color-1);
+
+    .section {
+      &__image {
+        display: none;
+      }
+
+      &__content {
+        > * + * {
+          margin-top: var(--content-gap);
+        }
+      }
+
+      &__title {
+        color: var(--neutral-color-1);
+      }
+
+      &__list {
+        > * + * {
+          margin-top: var(--list-gap);
+        }
+      }
+    }
+  }
+
+  &[data-variant="projects"] {
+    --img-min-height: #{toRem(404px)};
+    --img-max-height: #{toRem(728px)};
+    --img-target-height: #{toRem(404px)};
+    --content-vertical-space-top: #{calc(map-get($size-scale, s0) * 4)};
+    --content-vertical-space-bottom: #{calc(map-get($size-scale, s0) * 8)};
+    --stripe-width: 200%;
+    --stripe-height: 100%;
+
+    .container {
+      background-color: var(--dark-color-4);
+    }
+
+    .section__content {
+      position: relative;
+
+      &::before {
+        display: none;
+        background-color: var(--neutral-color-1);
+      }
+
+      &::after {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        content: '';
+        width: var(--stripe-width);
+        height: var(--stripe-height);
+        background-color: var(--dark-color-4);
+        z-index: -1;
+      }
+    }
+  }
+
   @include media-breakpoint(md) {
     &[data-variant="hero"] {
+      --img-target-height: #{toRem(606px)};
       --content-vertical-space-top: 0;
+      --content-vertical-space-bottom: 0;
 
       position: relative;
 
@@ -81,11 +210,168 @@
         left: var(--horizontal-space-left);
       }
     }
+
+    &[data-variant="about"] {
+      --vertical-space-top: #{calc(map-get($size-scale, s0) * 7.5)};
+      --img-target-height: #{toRem(658px)};
+      --content-vertical-space-top: 0;
+      --content-vertical-space-bottom: 0;
+      --content-horizontal-space-left: #{calc(map-get($size-scale, s0) * 4.375)};
+
+      position: relative;
+
+      .container {
+        position: absolute;
+        top: var(--vertical-space-top);
+        left: var(--horizontal-space-left);
+      }
+
+      .section__content {
+        padding-left: var(--content-horizontal-space-left);
+
+        &::before {
+          top: toRem(30px);
+          left: toRem(-42px);
+        }
+
+        > h2 {
+          max-width: 12ch;
+        }
+      }
+    }
+
+    &[data-variant="services"] {
+      --vertical-space-top: 0;
+      --vertical-space-bottom: 0;
+      --img-target-height: #{toRem(678px)};
+      --content-vertical-space-bottom: 0;
+      --content-gap: 0;
+      --title-vertical-space-top: #{toRem(126px)};
+      --title-max-width: 16ch;
+
+      &::before {
+        display: block;
+      }
+
+      position: relative;
+      background-color: transparent;
+
+      .container {
+        position: absolute;
+        top: var(--vertical-space-top);
+        left: var(--horizontal-space-left);
+      }
+
+      .section {
+        &__image {
+          display: grid;
+
+          > div {
+            height: clamp(
+              var(--img-min-height),
+              var(--img-target-height),
+              var(--img-max-height)
+            );
+            background-color: var(--red-color-1);
+
+            &::before {
+              width: 100%;
+            }
+          }
+        }
+
+        &__title {
+          position: absolute;
+          top: var(--title-vertical-space-top);
+          left: 0;
+          max-width: var(--title-max-width);
+          color: var(--dark-color-5);
+        }
+      }
+    }
+
+    &[data-variant="projects"] {
+      --vertical-space-top: 0;
+      --vertical-space-bottom: 0;
+      --img-target-height: #{toRem(472px)};
+      --content-vertical-space-top: #{calc(map-get($size-scale, s0) * 6.25)};
+      --content-vertical-space-bottom: #{calc(map-get($size-scale, s0) * 10.75)};
+
+      position: relative;
+
+      .container {
+        position: absolute;
+        top: var(--vertical-space-top);
+        left: var(--horizontal-space-left);
+        background-color: transparent;
+      }
+
+      .section__content {
+        z-index: 1;
+
+        &::before {
+          top: toRem(126px);
+          left: unset;
+          right: toRem(-32px);
+          display: block;
+        }
+
+        &::after {
+          display: block;
+        }
+      }
+    }
   }
 
   @include media-breakpoint(xl) {
+    --caption-title-font-size: #{toRem(20px)};
+    --caption-sub-title-font-size: #{toRem(18px)};
+
+    &__image {
+      figcaption {
+        span {
+          &:last-child {
+            font-size: var(--caption-sub-title-font-size);
+          }
+        }
+      }
+    }
+
     &[data-variant="hero"] {
       --vertical-space-top: #{calc(map-get($size-scale, s0) * 7)};
+      --img-target-height: #{toRem(800px)};
+    }
+
+    &[data-variant="about"] {
+      --vertical-space-top: #{calc(map-get($size-scale, s0) * 12.5)};
+      --img-target-height: #{toRem(984px)};
+      --content-horizontal-space-left: #{calc(map-get($size-scale, s0) * 9.625)};
+
+      .section__content {
+        &::before {
+          top: toRem(56px);
+          left: toRem(-80px);
+        }
+      }
+    }
+
+    &[data-variant="services"] {
+      --title-vertical-space-top: #{toRem(200px)};
+      --title-max-width: 16ch;
+      --img-target-height: #{toRem(900px)};
+    }
+
+    &[data-variant="projects"] {
+      --img-target-height: #{toRem(728px)};
+      --content-vertical-space-top: #{calc(map-get($size-scale, s0) * 9.5)};
+      --content-vertical-space-bottom: #{calc(map-get($size-scale, s0) * 15.25)};
+
+      .section__content {
+        &::before {
+          top: toRem(186px);
+          right: toRem(-67px);
+        }
+      }
     }
   }
 }
