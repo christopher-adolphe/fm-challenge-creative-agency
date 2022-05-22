@@ -6,7 +6,8 @@ import {
   generateCopyright,
   generateSlider,
   toggleHeaderVariant,
-  toggleNavigation
+  toggleNavigation,
+  scrollToContent
 } from "./assets/js/utilities";
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   generateCopyright(copyrightElem);
 
-  const projectsSlider = generateSlider('projects-slider', {
+  const projectsSlider = generateSlider('projects', {
     init: false,
     slidesPerView: 1,
     speed: 1500,
@@ -33,4 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
   toggleHeaderVariant('header');
 
   toggleNavigation('btn-nav-toggle');
+
+  scrollToContent('header-nav');
 });

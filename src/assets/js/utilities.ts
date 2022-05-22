@@ -69,8 +69,6 @@ export const toggleNavigation = (id: string) => {
     const btn = event.target as HTMLButtonElement;
     const isExpanded = btn.getAttribute('aria-expanded');
 
-    console.log(btn.getAttribute('aria-expanded'));
-
     if (isExpanded === 'false') {
       btn.setAttribute('aria-expanded', 'true');
     } else {
@@ -83,12 +81,45 @@ export const toggleNavigation = (id: string) => {
   btnNavToggleElem.addEventListener('click', handleBtnNavToggleElem);
 };
 
+export const scrollToContent = (id: string) => {
+  const headerElem: HTMLElement | null = getDOMElement(id);
+  const scrollToBtnList: NodeListOf<HTMLAnchorElement> = document.querySelectorAll('.js-btn-scroll-to');
+
+  if (!scrollToBtnList.length) {
+    return;
+  }
+
+  for (const scrollToBtnElem of scrollToBtnList) {
+    const anchorName: string | null = scrollToBtnElem.getAttribute('data-anchor');
+    const anchorElem: Element | null = document.querySelector(`#${anchorName}`);
+
+    scrollToBtnElem.addEventListener('click', (event: Event) => {
+      const target = event.target as HTMLAnchorElement;
+      const activeLink: HTMLAnchorElement | null | undefined = headerElem?.querySelector('a.active');
+
+      if (activeLink) {
+        activeLink.classList.remove('active');
+      }
+
+      if (target.nodeName === 'A') {
+        target.classList.add('active');
+        event.preventDefault();
+      }
+
+      if (anchorElem) {
+        anchorElem.scrollIntoView({behavior: 'smooth'});
+      }
+    });
+  }
+};
+
 const Utilities = {
   getDOMElement,
   generateCopyright,
   generateSlider,
   toggleHeaderVariant,
-  toggleNavigation
+  toggleNavigation,
+  scrollToContent
 };
 
 export default Utilities;

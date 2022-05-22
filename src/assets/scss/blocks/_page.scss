@@ -5,6 +5,10 @@
 
   &__content {
     margin-top: var(--page-offset-top);
+
+    > * {
+      scroll-snap-align: start;
+    }
   }
 
   @include media-breakpoint(md) {

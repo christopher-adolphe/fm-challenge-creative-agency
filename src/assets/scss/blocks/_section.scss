@@ -170,7 +170,7 @@
         display: none;
         position: absolute;
         top: 0;
-        right: 0;
+        right: toRem(-10px);
         content: '';
         width: var(--stripe-width);
         height: var(--stripe-height);
@@ -316,7 +316,7 @@
         &::before {
           top: toRem(126px);
           left: unset;
-          right: toRem(-32px);
+          right: toRem(-42px);
           display: block;
         }
 
@@ -373,7 +373,11 @@
       .section__content {
         &::before {
           top: toRem(186px);
-          right: toRem(-67px);
+          right: toRem(-96px);
+        }
+
+        &::after {
+          right: toRem(-30px);
         }
       }
     }
