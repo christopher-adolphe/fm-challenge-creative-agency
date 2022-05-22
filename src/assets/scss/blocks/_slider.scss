@@ -1,0 +1,33 @@
+@use '../abstracts/' as *;
+
+.slider {
+  --nav-vertical-space-bottom: #{calc(map-get($size-scale, s0) * 3.75)};
+  --nav-horizontal-space-left: 0;
+
+  @each $breakpoint, $value in $breakpoints {
+    @include media-breakpoint(#{$breakpoint}) {
+      --nav-horizontal-space-left: #{calc(50% - #{calc(map-get($containers, #{$breakpoint}) / 2)})};
+    }
+  }
+
+  position: relative;
+
+  > .container {
+    position: absolute;
+    bottom: var(--nav-vertical-space-bottom);
+    left: var(--nav-horizontal-space-left);
+    z-index: map-get($zindexes, sticky);
+
+    > * + * {
+      margin-left: map-get($size-scale, s0);
+    }
+  }
+
+  @include media-breakpoint(md) {
+    --nav-vertical-space-bottom: #{calc(map-get($size-scale, s0) * 12.8)};
+  }
+
+  @include media-breakpoint(xl) {
+    --nav-vertical-space-bottom: #{calc(map-get($size-scale, s0) * 20.5)};
+  }
+}

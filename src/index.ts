@@ -1,4 +1,4 @@
-import { Pagination } from "swiper";
+import { Navigation, Parallax } from "swiper";
 import 'swiper/css/pagination';
 
 import {
@@ -14,22 +14,21 @@ document.addEventListener('DOMContentLoaded', () => {
   
   generateCopyright(copyrightElem);
 
-  const heroSlider = generateSlider('hero-slider', {
+  const projectsSlider = generateSlider('projects-slider', {
     init: false,
+    slidesPerView: 1,
+    speed: 1500,
     centeredSlides: true,
-    effect: 'fade',
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-    modules: [ Pagination ],
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true
+    noSwiping: false,
+    parallax: true,
+    modules: [ Navigation, Parallax ],
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     }
   });
 
-  heroSlider?.init();
+  projectsSlider?.init();
 
   toggleHeaderVariant('header');
 

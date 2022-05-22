@@ -150,6 +150,8 @@
     --stripe-width: 200%;
     --stripe-height: 100%;
 
+    overflow: hidden;
+
     .container {
       background-color: var(--dark-color-4);
     }
