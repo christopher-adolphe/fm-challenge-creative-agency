@@ -116,7 +116,7 @@
     right: var(--btn-position-right);
     bottom: var(--btn-position-bottom);
     display: none;
-    background-color: var(--dark-color-2);
+    background-color: var(--red-color-2);
     transform-origin: center;
     transform: rotate(-90deg);
     z-index: map-get($zindexes, sticky);
@@ -124,7 +124,7 @@
     &:hover,
     &:focus,
     &.active {
-      background-color: var(--dark-color-2);
+      background-color: var(--red-color-2);
     }
   }
 

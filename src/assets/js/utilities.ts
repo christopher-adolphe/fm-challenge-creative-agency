@@ -113,16 +113,41 @@ export const scrollToContent = (id: string) => {
     }
 
     if (anchorElem) {
-      anchorElem.scrollIntoView({behavior: 'smooth'});
+      anchorElem.scrollIntoView({ behavior: 'smooth' });
     }
   });
 };
 
 export const scrollToTop = (id: string) => {
   const btnElem: HTMLElement | null = getDOMElement(id);
+  const headerElem: HTMLElement | null = getDOMElement('header');
+  const projectsSectionElem = getDOMElement('projects');
+  const mobileDevice: MediaQueryList = window.matchMedia('(max-width: 767px)');
 
   if (!btnElem) {
     return;
+  }
+
+  btnElem.addEventListener('click', (event: Event) => {
+    if (headerElem) {
+      headerElem.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+
+  const handleIntersectionObserver = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry: IntersectionObserverEntry) => {
+      if (entry.isIntersecting && !mobileDevice.matches) {
+        btnElem.style.display = 'inline-flex';
+      } else {
+        btnElem.style.display = 'none';
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(handleIntersectionObserver);
+
+  if (projectsSectionElem) {
+    observer.observe(projectsSectionElem);
   }
 };
 
@@ -132,7 +157,8 @@ const Utilities = {
   generateSlider,
   toggleHeaderVariant,
   toggleNavigation,
-  scrollToContent
+  scrollToContent,
+  scrollToTop
 };
 
 export default Utilities;

@@ -2,12 +2,19 @@
 
 .footer {
   --vertical-space: #{toRem(100px)};
+  --cta-vertical-space-top: #{toRem(50px)};
 
   padding-top: var(--vertical-space);
   padding-bottom: var(--vertical-space);
 
   &::before {
     display: none;
+  }
+
+  &__cta {
+    .btn {
+      margin-top: var(--cta-vertical-space-top);
+    }
   }
 
   &__copyright {
@@ -17,6 +24,7 @@
 
   @include media-breakpoint(md) {
     --vertical-space: #{toRem(70px)};
+    --cta-vertical-space-top: 0;
 
     &__cta {
       .row {

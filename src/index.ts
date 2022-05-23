@@ -7,7 +7,8 @@ import {
   generateSlider,
   toggleHeaderVariant,
   toggleNavigation,
-  scrollToContent
+  scrollToContent,
+  scrollToTop
 } from "./assets/js/utilities";
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -32,8 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   projectsSlider?.init();
 
   toggleHeaderVariant('header');
-
   toggleNavigation('btn-nav-toggle');
-
   scrollToContent('header-nav');
+  scrollToTop('btn-scroll-top');
 });
