@@ -251,6 +251,7 @@
       --content-vertical-space-bottom: 0;
       --content-gap: 0;
       --title-vertical-space-top: #{toRem(126px)};
+      --title-horizontal-space-left: 0;
       --title-max-width: 16ch;
 
       &::before {
@@ -287,7 +288,7 @@
         &__title {
           position: absolute;
           top: var(--title-vertical-space-top);
-          left: 0;
+          left: var(--title-horizontal-space-left);
           max-width: var(--title-max-width);
           color: var(--dark-color-5);
         }
@@ -380,6 +381,24 @@
           right: toRem(-30px);
         }
       }
+    }
+  }
+
+  @include media-breakpoint(xxl) {
+    &[data-variant="services"] {
+      --title-horizontal-space-left: #{toRem(55px)};
+    }
+  }
+
+  @include media-breakpoint(1600px) {
+    &[data-variant="services"] {
+      --title-horizontal-space-left: #{toRem(43px)};
+    }
+  }
+
+  @include media-breakpoint(1920px) {
+    &[data-variant="services"] {
+      --title-horizontal-space-left: #{map-get($size-scale, s0)};
     }
   }
 }

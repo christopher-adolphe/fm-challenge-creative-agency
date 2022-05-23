@@ -3,6 +3,8 @@
 .btn {
   --btn-vertical-space: #{calc(map-get($size-scale, s0) * 1.5)};
   --btn-horizontal-space: #{calc(map-get($size-scale, s0) * 2.5)};
+  --btn-position-right: #{toRem(24px)};
+  --btn-position-bottom: #{toRem(66px)};
   --btn-font-size: #{calc(map-get($size-scale, s0) * 1.125)};
   --btn-bg-color: var(--neutral-color-3);
   --btn-text-color: var(--dark-color-1);
@@ -66,7 +68,8 @@
 
   &[data-variant="burger"],
   &[data-variant="rounded-prev"],
-  &[data-variant="rounded-next"] {
+  &[data-variant="rounded-next"],
+  &[data-variant="rounded-top"] {
     mask-position: center center;
     mask-repeat: no-repeat;
     mask-size: contain;
@@ -85,7 +88,8 @@
   }
 
   &[data-variant="rounded-prev"],
-  &[data-variant="rounded-next"] {
+  &[data-variant="rounded-next"],
+  &[data-variant="rounded-top"] {
     width: toRem(40px);
     height: toRem(40px);
     padding: 0;
@@ -102,19 +106,43 @@
     mask-image: url('assets/images/shared/icon-arrow-previous.svg');
   }
 
-  &[data-variant="rounded-next"] {
+  &[data-variant="rounded-next"],
+  &[data-variant="rounded-top"] {
     mask-image: url('assets/images/shared/icon-arrow-next.svg');
+  }
+
+  &[data-variant="rounded-top"] {
+    position: fixed;
+    right: var(--btn-position-right);
+    bottom: var(--btn-position-bottom);
+    display: none;
+    background-color: var(--dark-color-2);
+    transform-origin: center;
+    transform: rotate(-90deg);
+    z-index: map-get($zindexes, sticky);
+
+    &:hover,
+    &:focus,
+    &.active {
+      background-color: var(--dark-color-2);
+    }
   }
 
   @include media-breakpoint(md) {
     --btn-vertical-space: #{calc(map-get($size-scale, s0) * 1.25)};
     --btn-horizontal-space: #{calc(map-get($size-scale, s0) * 1.125)};
     --btn-font-size: #{map-get($size-scale, s0)};
+
+    &[data-variant="rounded-top"] {
+      display: inline-flex;
+    }
   }
 
   @include media-breakpoint(xl) {
     --btn-vertical-space: #{calc(map-get($size-scale, s0) * 1.5)};
     --btn-horizontal-space: #{calc(map-get($size-scale, s0) * 2.5)};
+    --btn-position-right: #{toRem(32px)};
+    --btn-position-bottom: #{toRem(116px)};
     --btn-font-size: #{calc(map-get($size-scale, s0) * 1.125)};
   }
 }

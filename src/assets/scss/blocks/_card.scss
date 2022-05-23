@@ -5,7 +5,7 @@
   --number-font-size: 5.333em;
   --content-font-size: #{toRem(15px)};
   --content-gap: 0;
-  --content-horizontal-space-left: map-get($size-scale, s0);
+  --content-horizontal-space-left: #{map-get($size-scale, s0)};
 
   > * {
     color: inherit;

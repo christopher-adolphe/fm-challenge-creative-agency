@@ -21,7 +21,7 @@ export const generateCopyright = (elem: HTMLElement | null) => {
 };
 
 export const generateSlider = (id: string, options: { [key: string]: any } | undefined): Swiper | undefined => {
-  const sliderElem = getDOMElement(id);
+  const sliderElem: HTMLElement | null = getDOMElement(id);
 
   if (!sliderElem) {
     return;
@@ -33,12 +33,13 @@ export const generateSlider = (id: string, options: { [key: string]: any } | und
 };
 
 export const toggleHeaderVariant = (id: string) => {
-  const headerElem = getDOMElement(id);
+  const headerElem: HTMLElement | null = getDOMElement(id);
 
   if (!headerElem) {
     return;
   }
 
+  const mobileDevice: MediaQueryList = window.matchMedia('(max-width: 767px)');
   const handleViewportChange = (mediaQueryList: MediaQueryList) => {
     if (mediaQueryList.matches) {
       headerElem.dataset.variant = 'mobile';
@@ -47,7 +48,6 @@ export const toggleHeaderVariant = (id: string) => {
       document.body.classList.remove('no-scrolling');
     }
   };
-  const mobileDevice: MediaQueryList = window.matchMedia('(max-width: 767px)');
 
   handleViewportChange(mobileDevice);
 
@@ -59,7 +59,7 @@ export const toggleHeaderVariant = (id: string) => {
 };
 
 export const toggleNavigation = (id: string) => {
-  const btnNavToggleElem = getDOMElement(id);
+  const btnNavToggleElem: HTMLElement | null = getDOMElement(id);
 
   if (!btnNavToggleElem) {
     return;
@@ -82,34 +82,47 @@ export const toggleNavigation = (id: string) => {
 };
 
 export const scrollToContent = (id: string) => {
-  const headerElem: HTMLElement | null = getDOMElement(id);
-  const scrollToBtnList: NodeListOf<HTMLAnchorElement> = document.querySelectorAll('.js-btn-scroll-to');
+  const navElem: HTMLElement | null = getDOMElement(id);
 
-  if (!scrollToBtnList.length) {
+  if (!navElem) {
     return;
   }
 
-  for (const scrollToBtnElem of scrollToBtnList) {
-    const anchorName: string | null = scrollToBtnElem.getAttribute('data-anchor');
+  const navListElem: HTMLUListElement | null = navElem.querySelector('ul');
+  const btnNavToggleElem: HTMLElement | null = getDOMElement('btn-nav-toggle');
+  const mobileDevice: MediaQueryList = window.matchMedia('(max-width: 767px)');
+
+  navListElem?.addEventListener('click', (event: Event) => {
+    const target = event.target as HTMLAnchorElement;
+    const activeLink: Element | null = navListElem?.querySelector('a.active');
+    const anchorName: string | null = target.getAttribute('data-anchor');
     const anchorElem: Element | null = document.querySelector(`#${anchorName}`);
 
-    scrollToBtnElem.addEventListener('click', (event: Event) => {
-      const target = event.target as HTMLAnchorElement;
-      const activeLink: HTMLAnchorElement | null | undefined = headerElem?.querySelector('a.active');
+    if (activeLink) {
+      activeLink.classList.remove('active');
+    }
 
-      if (activeLink) {
-        activeLink.classList.remove('active');
-      }
+    if (target.nodeName === 'A') {
+      target.classList.add('active');
+      event.preventDefault();
+    }
 
-      if (target.nodeName === 'A') {
-        target.classList.add('active');
-        event.preventDefault();
-      }
+    if (mobileDevice.matches) {
+      btnNavToggleElem?.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('no-scrolling');
+    }
 
-      if (anchorElem) {
-        anchorElem.scrollIntoView({behavior: 'smooth'});
-      }
-    });
+    if (anchorElem) {
+      anchorElem.scrollIntoView({behavior: 'smooth'});
+    }
+  });
+};
+
+export const scrollToTop = (id: string) => {
+  const btnElem: HTMLElement | null = getDOMElement(id);
+
+  if (!btnElem) {
+    return;
   }
 };
 
