@@ -48,7 +48,7 @@ Users should be able to:
 - [webpack](https://webpack.js.org/)
 
 ### What I learned
-I have been using the **Block, Element, Modifier** methodology (commonly referred to as BEM) for my `CSS` authoring for a very long time because I benefit of a better structured `CSS` with low specificity and ease of readability and maintainability. However, I recently heard of the **CUBE CSS** methodology created by (Andy Bell)[https://piccalil.li/] and was curious to know how if differs from BEM. So I decided to read more about it and use this project as a way to implement what I've learned.
+I have been using the **Block, Element, Modifier** methodology (commonly referred to as BEM) for my `CSS` authoring for a very long time because I benefit of a better structured `CSS` with low specificity and ease of readability and maintainability. However, I recently heard of the **CUBE CSS** methodology created by (Andy Bell)[https://piccalil.li] and was curious to know how if differs from BEM. So I decided to read more about it and use this project as a way to implement what I've learned.
 
 - CUBE stands for **Composition Utility Block Exception**
   - **Composition** is the layer that controls the overall layout *(i.e how elements interact with each other)* and the rhythm *(i.e the space around those elements)*
