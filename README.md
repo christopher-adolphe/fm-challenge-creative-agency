@@ -67,7 +67,7 @@ I have been using the **Block, Element, Modifier** methodology (commonly referre
 <footer class="footer | stack | bg-wave"></footer>
 ```
 
-Fortunately, it was not that difficult for me to switch to the CUBE CSS methodoloy. I refactored my boilerplate to create **composition** and **utility** classes and use these to compose the layout. After that, I created **block** classes for the components together with **exception** where required.
+Fortunately, it was not that difficult for me to switch to the CUBE CSS methodoloy. I refactored my boilerplate to create **composition** and **utility** classes and used them to compose the layout. After that, I created **block** classes for the components together with their **exception** rules where required.
 
 #### On the JS side:
 - I have used **Swiper** for the project slider. It is the first time that I'm using this plugin and it was easy to implement as it is well documented. It also comes with a parallax option out of the box which is great for customizing animations on the slides.
