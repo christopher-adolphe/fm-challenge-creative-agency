@@ -121,7 +121,7 @@ export const scrollToContent = (id: string) => {
 export const scrollToTop = (id: string) => {
   const btnElem: HTMLElement | null = getDOMElement(id);
   const headerElem: HTMLElement | null = getDOMElement('header');
-  const projectsSectionElem = getDOMElement('projects');
+  const projectsSectionElem: HTMLElement | null = getDOMElement('projects');
   const mobileDevice: MediaQueryList = window.matchMedia('(max-width: 767px)');
 
   if (!btnElem) {

@@ -71,7 +71,7 @@ Fortunately, it was not that difficult for me to switch to the CUBE CSS methodol
 
 #### On the JS side:
 - I have used **Swiper** for the project slider. It is the first time that I'm using this plugin and it was easy to implement as it is well documented. It also comes with a parallax option out of the box which is great for customizing animations on the slides.
-- I used intersection Observer API to control the display of the scroll to top button. This is a cleaner approach as compared to adding a listener to the sroll event.
+- I used intersection Observer API to control the display of the scroll to top button. This is a cleaner approach as compared to adding a listener to the scroll event.
 
 ```js
 const btnElem = document.getElementById('btn-scroll-top');
