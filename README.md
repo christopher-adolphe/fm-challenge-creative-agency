@@ -49,7 +49,7 @@ Users should be able to:
 
 ### What I learned
 #### On the CSS side
-I have been using the **Block, Element, Modifier** methodology (commonly referred to as BEM) for my `CSS` authoring for a very long time because I benefit of a better structured `CSS` with low specificity and ease of readability and maintainability. However, I recently heard of the **CUBE CSS** methodology *(created by Andy Bell)* and was curious to know how if differs from BEM. So I decided to read more about it and use this project as a way to implement what I've learned.
+I have been using the **Block, Element, Modifier** methodology (commonly referred to as BEM) for my `CSS` authoring for a very long time because I benefit of a better structured `CSS` with low specificity and ease of readability and maintainability. However, I recently heard of the **CUBE CSS** methodology *(created by Andy Bell)* and was curious to know how it differs from BEM. So I decided to read more about it and use this project as a way to implement what I learned.
 
 - CUBE stands for **Composition Utility Block Exception**
   - **Composition** is the layer that controls the overall layout *(i.e how elements interact with each other)* and the rhythm *(i.e the space around those elements)*
@@ -64,7 +64,7 @@ I have been using the **Block, Element, Modifier** methodology (commonly referre
   - And finally design token **utility** classes
 
 #### On the JS side
-- I have used the **Swiper** for the project slider. It is the first time that I'm using this plugin and it was easy to implement as it is well documented. It also come with parallax option out of the box which is also great.
+- I have used **Swiper** for the project slider. It is the first time that I'm using this plugin and it was easy to implement as it is well documented. It also comes with a parallax option out of the box which is great for customizing animations on the slides.
 - I used intersection Observer API to control the display of the scroll to top button. This is a cleaner approach as compared to adding a listener to the sroll event.
 ```js
 const btnElem = document.getElementById('btn-scroll-top');
@@ -90,6 +90,8 @@ observer.observe(projectsSectionElem);
 - [CUBE CSS](https://cube.fyi/)
 - [Build a dashboard with CUBE CSS](https://piccalil.li/tutorial/build-a-dashboard-with-cube-css/)
 - [Every Layout](https://every-layout.dev/)
+- [Swiper](https://swiperjs.com/)
+- [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
 
 ## Author
 
