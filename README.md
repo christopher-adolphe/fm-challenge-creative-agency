@@ -48,7 +48,7 @@ Users should be able to:
 - [webpack](https://webpack.js.org/)
 
 ### What I learned
-#### On the CSS side
+#### On the CSS side:
 I have been using the **Block, Element, Modifier** methodology (commonly referred to as BEM) for my `CSS` authoring for a very long time because I benefit of a better structured `CSS` with low specificity and ease of readability and maintainability. However, I recently heard of the **CUBE CSS** methodology *(created by Andy Bell)* and was curious to know how it differs from BEM. So I decided to read more about it and use this project as a way to implement what I learned.
 
 - CUBE stands for **Composition Utility Block Exception**
@@ -63,7 +63,9 @@ I have been using the **Block, Element, Modifier** methodology (commonly referre
   - Then standard **utility** classes
   - And finally design token **utility** classes
 
-#### On the JS side
+Fortunately, it was not that difficult for me to switch to the CUBE CSS methodoloy. I refactored my boilerplate to create **composition** and **utility** classes and use these to compose the layout. After that, I created **block** classes for the components together with **exception** where required.
+
+#### On the JS side:
 - I have used **Swiper** for the project slider. It is the first time that I'm using this plugin and it was easy to implement as it is well documented. It also comes with a parallax option out of the box which is great for customizing animations on the slides.
 - I used intersection Observer API to control the display of the scroll to top button. This is a cleaner approach as compared to adding a listener to the sroll event.
 ```js
