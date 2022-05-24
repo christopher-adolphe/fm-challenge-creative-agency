@@ -1,19 +1,76 @@
 @use '../abstracts/' as *;
 
 .bg-wave {
+  --pattern-width: #{toRem(64px)};
+  --pattern-height: #{toRem(30px)};
+
   position: relative;
 
   &::before {
     position: absolute;
-    top: calc(50% - toRem(30px));
-    left: toRem(-67px);
+    top: calc(50% - calc(var(--pattern-height) / 2));
+    left: toRem(-27px);
     content: '';
-    width: toRem(134px);
-    height: toRem(60px);
+    width: var(--pattern-width);
+    height: var(--pattern-height);
     background-color: var(--red-color-1);
     mask-image: url('assets/images/shared/bg-pattern-wave.svg');
     mask-position: top left;
     mask-repeat: no-repeat;
     mask-size: contain;
+  }
+
+  @include media-breakpoint(xl) {
+    --pattern-width: #{toRem(134px)};
+    --pattern-height: #{toRem(60px)};
+
+    &::before {
+      left: toRem(-67px);
+    }
+  }
+}
+
+.bg-stripe {
+  --stripe-width: 100%;
+  --stripe-height: #{toRem(100px)};
+  --bg-gradient-start: 42.75%;
+  --bg-gradient-end: 42.75%;
+
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: calc(var(--stripe-height) * -1);
+    left: 0;
+    content: '';
+    width: var(--stripe-width);
+    height: var(--stripe-height);
+    background: var(--red-color-1);
+  }
+
+  @include media-breakpoint(xl) {
+    --stripe-height: #{toRem(200px)};
+  }
+}
+
+.bg-stripe-vertical {
+  --stripe-width: #{toRem(80px)};
+  --stripe-height: 100%;
+
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: '';
+    width: var(--stripe-width);
+    height: var(--stripe-height);
+    background-color: var(--dark-color-4);
+    z-index: -1;
+  }
+
+  @include media-breakpoint(xl) {
+    --stripe-width: #{toRem(180px)};
   }
 }

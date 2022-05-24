@@ -1,7 +1,106 @@
 @use '../abstracts/' as *;
 
 .header {
-  .row {
+  --vertical-space: #{toRem(40px)};
+  --gradient-length: 40%;
+  --nav-offset-top: #{toRem(112px)};
+  --nav-space: #{toRem(24px)};
+  --nav-gap: #{toRem(20px)};
+  --nav-cta-gap: 0;
+  --nav-font-size: #{toRem(18px)};
+
+  background-color: var(--neutral-color-1);
+
+  > .row {
     justify-content: space-between;
+    padding-top: var(--vertical-space);
+    padding-bottom: var(--vertical-space);
+  }
+
+  &__nav {
+    > .row {
+      gap: var(--nav-gap);
+    }
+
+    li:last-child {
+      margin-left: var(--nav-cta-gap);
+    }
+
+    a:not([class="btn"]) {
+      color: var(--neutral-color-1);
+      font-size: var(--nav-font-size);
+      transition: color 0.35s ease-in-out,
+                  font-weight 0.35s ease-in-out;
+
+      &:hover,
+      &:active {
+        color: var(--dark-color-4);
+      }
+
+      &.active,
+      &.active:hover {
+        color: var(--neutral-color-1);
+        font-weight: var(--font-weight-extra-bold);
+      }
+    }
+  }
+
+  &[data-variant="mobile"] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: map-get($zindexes, fixed);
+
+    .header {
+      &__nav-toggle {
+        &[aria-expanded="true"] + .header__nav {
+          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+      }
+
+      &__nav {
+        position: fixed;
+        top: var(--nav-offset-top);
+        left: 0;
+        width: 100%;
+        height: calc(100vh - var(--nav-offset-top));
+        padding: var(--nav-space);
+        background-color: var(--dark-color-4);
+        z-index: map-get($zindexes, fixed);
+        clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+        transition: clip-path 0.35s ease-in-out;
+  
+        > .row {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint(md) {
+    --nav-gap: #{toRem(24px)};
+    --nav-cta-gap: #{toRem(16px)};
+    --nav-font-size: #{toRem(15px)};
+
+    background: linear-gradient(
+      to right,
+      var(--neutral-color-1) var(--gradient-length),
+      var(--red-color-1) var(--gradient-length)
+    );
+
+    [data-variant="burger"] {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint(lg) {
+    --gradient-length: 50%;
+  }
+
+  @include media-breakpoint(xl) {
+    --vertical-space: #{toRem(56px)};
+    --nav-gap: #{toRem(32px)};
+    --nav-font-size: #{toRem(16px)};
   }
 }

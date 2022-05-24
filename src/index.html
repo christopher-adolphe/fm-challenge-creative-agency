@@ -9,95 +9,223 @@
 </head>
 <body>
   <div class="page">
-    <header class="page__header"></header>
+    <a href="#main" class="page__skip-link" aria-label="Skip to main content">Skip to main content</a>
 
-    <main class="page__content page__section--bg-light-1">
-      <section class="page__section">
+    <header id="header" class="header"></header>
+
+    <main id="main" class="page__content">
+      <section class="section" data-variant="hero">
+        <div class="section__image | grid-cols grid-no-gutter">
+          <picture class="grid__item grid__item--start-md-6 grid__item--span-md-7">
+            <source media="(min-width: 1440px)" srcset="assets/images/home/desktop/image-hero@2x.jpg">
+            <source media="(min-width: 1110px)" srcset="assets/images/home/desktop/image-hero.jpg">
+            <source media="(min-width: 768px)" srcset="assets/images/home/tablet/image-hero.jpg">
+            <source srcset="assets/images/home/mobile/image-hero.jpg">
+            <img src="assets/images/home/mobile/image-hero.jpg" alt="Branding & website design agency" />
+          </picture>
+        </div>
+
         <div class="container">
-          <div class="grid">
-            <div class="grid__item">
-              <div class="hero__content d-flex d-flex--col d-flex--justify-content-center d-flex--align-items-start">
-                <h1 class="hero__title">Ready, Get Set, <span>Code</span></h1>
-  
-                <p class="hero__tag-line">A great boilerplate to quickly start any front-end development project using TypeScript, Sass and webpack 5.</p>
+          <div class="grid-cols">
+            <div class="grid__item grid__item--span-md-7">
+              <div class="section__content | stack">
+                <h1>Branding & website design agency</h1>
+
+                <p>We specialize in visual storytelling by creating cohesive brand and website design solutions for small businesses, giving lasting impressions to audiences in a digital world.</p>
+
+                <a href="/" class="btn" data-variant="primary">Learn More</a>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
-            <div class="grid__item">
-              <div class="hero__illustration d-flex d-flex--col d-flex--justify-content-center d-flex--align-items-center">
-                <div id="hero-slider" class="swiper">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <img src="assets/images/logo-typescript.svg" alt="TypeScript" />
+      <section id="about" class="section | bg-dark-color-4" data-variant="about">
+        <div class="section__image | grid-cols grid-no-gutter">
+          <picture class="grid__item grid__item--span-md-6">
+            <source media="(min-width: 1440px)" srcset="assets/images/home/desktop/image-strategic@2x.jpg">
+            <source media="(min-width: 1110px)" srcset="assets/images/home/desktop/image-strategic.jpg">
+            <source media="(min-width: 768px)" srcset="assets/images/home/tablet/image-strategic.jpg">
+            <source srcset="assets/images/home/mobile/image-strategic.jpg">
+            <img src="assets/images/home/mobile/image-strategic.jpg" alt="Design is strategic" />
+          </picture>
+        </div>
+
+        <div class="container">
+          <div class="grid-cols">
+            <div class="grid__item grid__item--span-md-6 grid__item--start-md-7">
+              <div class="section__content | stack | text-neutral-color-1 | bg-wave">
+                <h2><span class="text-red-color-1">Design</span> is strategic.</h2>
+
+                <p>“A well-crafted design strategy consistently produces desired outcomes and brand awareness. We are firm believers that success lies in creative collaboration with our clients.”</p>
+
+                <a href="/" class="btn" data-variant="link">
+                  <span>Schedule a Call</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section" data-variant="services">
+        <div class="section__image | grid-cols grid-no-gutter">
+          <div class="grid__item grid__item--start-md-6 grid__item--span-md-7 | bg-stripe"></div>
+        </div>
+        
+        <div class="container">
+          <div class="grid-cols">
+            <div class="grid__item grid__item--span-md-6 grid__item--start-md-7 grid__item--span-xl-5 grid__item--start-xl-7">
+              <div class="section__content | stack">
+                <h2 class="section__title">Our approach for creating a winning brand</h2>
+
+                <ul class="section__list | stack">
+                  <li>
+                    <div class="card | stack" data-variant="absolute-text">
+                      <div class="card__header">
+                        <span class="card__number | text-font-extra-bold text-neutral-color-1-opacity-25">01</span>
+                        <h3 class="card__title | text-neutral-color-1">Brand Strategy</h3>
+                      </div>
+
+                      <div class="card__content">
+                        <p class="text-neutral-color-1">Brand strategy is critical for long-term success. Outshining competitors and capturing the target audience are key.</p>
+                      </div>
                     </div>
+                  </li>
 
-                    <div class="swiper-slide">
-                      <img src="assets/images/logo-sass.svg" alt="Sass" />
+                  <li>
+                    <div class="card | stack" data-variant="absolute-text">
+                      <div class="card__header">
+                        <span class="card__number | text-font-extra-bold text-neutral-color-1-opacity-25">02</span>
+                        <h3 class="card__title | text-neutral-color-1">Brand Design</h3>
+                      </div>
+
+                      <div class="card__content">
+                        <p class="text-neutral-color-1">Keeping the brand design unique and meaningful helps in communicating the brand's value effectively.</p>
+                      </div>
                     </div>
+                  </li>
 
-                    <div class="swiper-slide">
-                      <img class="image" src="assets/images/logo-webpack.svg" alt="Webpack" />
+                  <li>
+                    <div class="card | stack" data-variant="absolute-text">
+                      <div class="card__header">
+                        <span class="card__number | text-font-extra-bold text-neutral-color-1-opacity-25">03</span>
+                        <h3 class="card__title | text-neutral-color-1">Web Design</h3>
+                      </div>
+
+                      <div class="card__content">
+                        <p class="text-neutral-color-1">A beautifully crafted website is the best tool for brand awareness, and ultimately results in increased revenues.</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div id="projects" class="slider swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <section class="section" data-variant="projects">
+              <div class="section__image | grid-cols grid-no-gutter">
+                <picture class="grid__item grid__item--start-md-6 grid__item--span-md-7" data-swiper-parallax-x="-1000">
+                  <source media="(min-width: 1440px)" srcset="assets/images/home/desktop/image-slide-1@2x.jpg">
+                  <source media="(min-width: 1110px)" srcset="assets/images/home/desktop/image-slide-1.jpg">
+                  <source media="(min-width: 768px)" srcset="assets/images/home/tablet/image-slide-1.jpg">
+                  <source srcset="assets/images/home/mobile/image-slide-1.jpg">
+                  <img src="assets/images/home/mobile/image-slide-1.jpg" alt="Lean Product Roadmap" />
+        
+                  <figcaption class="stack | text-neutral-color-1">
+                    <span data-swiper-parallax-x="-600">Lean Product Roadmap</span>
+                    <span data-swiper-parallax-x="-800">2019 Project</span>
+                  </figcaption>
+                </picture>
+              </div>
+      
+              <div class="container">
+                <div class="grid-cols">
+                  <div class="grid__item grid__item--span-md-6">
+                    <div class="section__content | bg-wave" data-swiper-parallax-x="500">
+                      <h2 class="text-neutral-color-1">Brand naming & guidelines</h2>
                     </div>
                   </div>
-
-                  <div class="swiper-pagination"></div>
                 </div>
               </div>
-            </div>
+            </section>
+          </div>
+
+          <div class="swiper-slide">
+            <section class="section" data-variant="projects">
+              <div class="section__image | grid-cols grid-no-gutter">
+                <picture class="grid__item grid__item--start-md-6 grid__item--span-md-7" data-swiper-parallax-x="-1000">
+                  <source media="(min-width: 1440px)" srcset="assets/images/home/desktop/image-slide-2@2x.jpg">
+                  <source media="(min-width: 1110px)" srcset="assets/images/home/desktop/image-slide-2.jpg">
+                  <source media="(min-width: 768px)" srcset="assets/images/home/tablet/image-slide-2.jpg">
+                  <source srcset="assets/images/home/mobile/image-slide-2.jpg">
+                  <img src="assets/images/home/mobile/image-slide-2.jpg" alt="New Majestic Hotel" />
+        
+                  <figcaption class="stack | text-neutral-color-1">
+                    <span data-swiper-parallax-x="-600">New Majestic Hotel</span>
+                    <span data-swiper-parallax-x="-800">2018 Project</span>
+                  </figcaption>
+                </picture>
+              </div>
+      
+              <div class="container">
+                <div class="grid-cols">
+                  <div class="grid__item grid__item--span-md-6">
+                    <div class="section__content | bg-wave" data-swiper-parallax-x="500">
+                      <h2 class="text-neutral-color-1">Brand identity & merchandise</h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <div class="swiper-slide">
+            <section class="section" data-variant="projects">
+              <div class="section__image | grid-cols grid-no-gutter">
+                <picture class="grid__item grid__item--start-md-6 grid__item--span-md-7" data-swiper-parallax-x="-1000">
+                  <source media="(min-width: 1440px)" srcset="assets/images/home/desktop/image-slide-3@2x.jpg">
+                  <source media="(min-width: 1110px)" srcset="assets/images/home/desktop/image-slide-3.jpg">
+                  <source media="(min-width: 768px)" srcset="assets/images/home/tablet/image-slide-3.jpg">
+                  <source srcset="assets/images/home/mobile/image-slide-3.jpg">
+                  <img src="assets/images/home/mobile/image-slide-3.jpg" alt="Crypto Dashboard" />
+        
+                  <figcaption class="stack | text-neutral-color-1">
+                    <span data-swiper-parallax-x="-600">Crypto Dashboard</span>
+                    <span data-swiper-parallax-x="-800">2016 Project</span>
+                  </figcaption>
+                </picture>
+              </div>
+      
+              <div class="container">
+                <div class="grid-cols">
+                  <div class="grid__item grid__item--span-md-6">
+                    <div class="section__content | bg-wave" data-swiper-parallax-x="500">
+                      <h2 class="text-neutral-color-1">Brand identity & web design</h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
         </div>
-      </section>
 
-      <section class="page__section page__section--bg-light-2">
         <div class="container">
-          <div class="grid">
-            <div class="grid__item">
-              <div class="feature">
-                <h3 class="feature__title d-flex d-flex--justify-content-start d-flex--align-items-center">
-                  <span class="feature__icon">
-                    <img src="assets/images/logo-typescript.svg" alt="TypeScript" />
-                  </span>
+          <button class="btn swiper-button-prev" data-variant="rounded-prev" title="Previous slide"></button>
 
-                  TypeScript
-                </h3>
-  
-                <p>TypeScript adds additional syntax to JavaScript to support a tighter integration with your editor. Catch errors early in your editor. It understands JavaScript and uses type inference to give you great tooling without additional code.</p>
-              </div>
-            </div>
-
-            <div class="grid__item">
-              <div class="feature">
-                <h3 class="feature__title d-flex d-flex--justify-content-start d-flex--align-items-center">
-                  <span class="feature__icon">
-                    <img src="assets/images/logo-sass.svg" alt="Sass" />
-                  </span>
-
-                  Sass
-                </h3>
-  
-                <p>Sass is the most mature, stable, and powerful preprocessor. Sass has features that don't exist in CSS yet like nesting, mixins, inheritance, and other nifty goodies that help you write robust, maintainable CSS.</p>
-              </div>
-            </div>
-
-            <div class="grid__item">
-              <div class="feature">
-                <h3 class="feature__title d-flex d-flex--justify-content-start d-flex--align-items-center">
-                  <span class="feature__icon">
-                    <img src="assets/images/logo-webpack.svg" alt="Webpack" />
-                  </span>
-
-                  webpack
-                </h3>
-  
-                <p>Webpack is a static module bundler for modern JavaScript applications. It combines every module your project needs into one or more bundles, which are static assets to serve your content from.</p>
-              </div>
-            </div>
-          </div>
+          <button class="btn swiper-button-next" data-variant="rounded-next" title="Next slide"></button>
         </div>
-      </section>
+      </div>
     </main>
 
-    <footer class="page__footer"></footer>
+    <button id="btn-scroll-top" class="btn" data-variant="rounded-top" title="Back to top"></button>
+
+    <footer class="footer | stack | bg-wave"></footer>
   </div>
 </body>
 </html>

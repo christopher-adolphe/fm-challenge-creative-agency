@@ -1,9 +1,68 @@
 @use '../abstracts/' as *;
 
 .card {
-  align-items: center;
-  
+  --header-font-size: #{toRem(15px)};
+  --number-font-size: 5.333em;
+  --content-font-size: #{toRem(15px)};
+  --content-gap: 0;
+  --content-horizontal-space-left: #{map-get($size-scale, s0)};
+
+  > * {
+    color: inherit;
+  }
+
+  &__header {
+    font-size: var(--header-font-size);
+  }
+
+  &__number {
+    font-size: var(--number-font-size);
+    line-height: 1;
+  }
+
+  &__title {
+    font-size: inherit;
+  }
+
   &__content + &__content {
     margin-top: toRem(58px);
+  }
+
+  &__content p {
+    font-size: var(--content-font-size);
+  }
+
+  &[data-variant="centered"] {
+    align-items: center;
+  }
+
+  &[data-variant="absolute-text"] {
+    > * + * {
+      margin-top: var(--content-gap);
+    }
+
+    .card {
+      &__header {
+        position: relative;
+      }
+
+      &__title {
+        position: absolute;
+        left: var(--content-horizontal-space-left);
+        bottom: calc(map-get($size-scale, s0) * 1.25);
+      }
+
+      &__content {
+        padding-left: var(--content-horizontal-space-left);
+      }
+    }
+  }
+
+  @include media-breakpoint(xl) {
+    --header-font-size: #{calc(map-get($size-scale, s0) * 1.25)};
+    --number-font-size: 4em;
+    --content-font-size: #{calc(map-get($size-scale, s0) * 1.125)};
+    --content-gap: #{calc(map-get($size-scale, s0) * 1.5)};
+    --content-horizontal-space-left: #{calc(map-get($size-scale, s0) * 3.75)};
   }
 }

@@ -1,0 +1,17 @@
+@use '../abstracts/' as *;
+
+.page {
+  --page-offset-top: #{toRem(112px)};
+
+  &__content {
+    margin-top: var(--page-offset-top);
+
+    > * {
+      scroll-snap-align: start;
+    }
+  }
+
+  @include media-breakpoint(md) {
+    --page-offset-top: 0;
+  }
+}

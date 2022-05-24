@@ -27,8 +27,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul[class],
+ol[class] {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -139,8 +139,8 @@ body {
 }
 
 p {
-  color: var(--dark-color-2);
-  font-size: toRem(18px);
+  color: var(--dark-color-4);
+  font-size: toRem(15px);
 }
 
 a {
@@ -150,6 +150,12 @@ a {
 }
 
 :focus {
-  outline: var(--dark-color-1) dotted 3px;
-  outline-offset: 0.25rem;
+  outline: var(--dark-color-3) dotted 3px;
+  outline-offset: 0.15rem;
+}
+
+@include media-breakpoint(xl) {
+  p {
+    font-size: toRem(18px);
+  }
 }
