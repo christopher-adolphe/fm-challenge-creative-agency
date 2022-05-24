@@ -10,6 +10,7 @@
   --content-vertical-space-bottom: #{calc(map-get($size-scale, s0) * 6)};
   --content-horizontal-space-left: 0;
   --content-gap: #{calc(map-get($size-scale, s0) * 2.5)};
+  --caption-vertical-space-bottom: #{calc(map-get($size-scale, s0) * 17.5)};
   --caption-vertical-space: #{calc(map-get($size-scale, s0) * 2.25)};
   --caption-horizontal-space: #{calc(map-get($size-scale, s0) * 2)};
   --caption-title-font-size: #{toRem(15px)};
@@ -18,6 +19,22 @@
   &__image {
     picture {
       position: relative;
+
+      &[data-variant="caption"] {
+        &::after {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          content: '';
+          width: 100%;
+          height: 130px;
+          background: linear-gradient(
+            to top,
+            var(--dark-color-4) 0%,
+            transparent 100%
+          );
+        }
+      }
     }
 
     img {
@@ -33,15 +50,10 @@
     &-caption {
       position: absolute;
       left: 0;
-      bottom: 0;
+      bottom: var(--caption-vertical-space-bottom);
       align-items: flex-end;
       width: 100%;
       padding: var(--caption-vertical-space) var(--caption-horizontal-space);
-      background: linear-gradient(
-        to top,
-        var(--dark-color-4) 0%,
-        transparent 100%
-      );
 
       > * + * {
         margin-top: 0;
@@ -181,6 +193,8 @@
   }
 
   @include media-breakpoint(md) {
+    --caption-vertical-space-bottom: 0;
+
     &[data-variant="hero"],
     &[data-variant="about"],
     &[data-variant="services"],
