@@ -50,6 +50,7 @@ Users should be able to:
 ### What I learned
 I have been using the **Block, Element, Modifier** methodology (commonly referred to as BEM) for my `CSS` authoring for a very long time because I benefit of a better structured `CSS` with low specificity and ease of readability and maintainability. However, I recently heard of the **CUBE CSS** methodology *(created by Andy Bell)* and was curious to know how if differs from BEM. So I decided to read more about it and use this project as a way to implement what I've learned.
 
+#### CSS
 - CUBE stands for **Composition Utility Block Exception**
   - **Composition** is the layer that controls the overall layout *(i.e how elements interact with each other)* and the rhythm *(i.e the space around those elements)*
   - **Utility** is the layer that defines re-usable helper classes that apply a single `CSS` property or a concise group of related properties *(i.e a single-responsibility class)*
@@ -61,6 +62,28 @@ I have been using the **Block, Element, Modifier** methodology (commonly referre
   - Then any subsequent **block** classes
   - Then standard **utility** classes
   - And finally design token **utility** classes
+
+#### JS
+- I have used the **Swiper** for the project slider. It is the first time that I'm using this plugin and it was easy to implement as it is well documented. It also come with parallax option out of the box which is also great.
+- I used intersection Observer API to control the display of the scroll to top button. This is a cleaner approach as compared to adding a listener to the sroll event.
+```js
+const btnElem = document.getElementById('btn-scroll-top');
+const projectsSectionElem = document.getElementById('projects');
+
+const handleIntersectionObserver = (entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      btnElem.style.display = 'inline-flex';
+    } else {
+      btnElem.style.display = 'none';
+    }
+  });
+};
+
+const observer = new IntersectionObserver(handleIntersectionObserver);
+
+observer.observe(projectsSectionElem);
+```
 
 ### Useful resources
 
