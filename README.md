@@ -48,19 +48,19 @@ Users should be able to:
 - [webpack](https://webpack.js.org/)
 
 ### What I learned
-I have been using the **Block, Element, Modifier** methodology (common referred to as BEM) for my `CSS` authoring for a very long time because it allows me to have better structured `CSS` with low specificity and ease of readability and maintainability. However, I recently heard of the **CUBE CSS** methodology (created by (Andy Bell)[https://piccalil.li/]) and was curious to know how if differs from BEM. So I decided to read more about it and use this project as a way to implement what I'be learned.
+I have been using the **Block, Element, Modifier** methodology (commonly referred to as BEM) for my `CSS` authoring for a very long time because I benefit of a better structured `CSS` with low specificity and ease of readability and maintainability. However, I recently heard of the **CUBE CSS** methodology (created by (Andy Bell)[https://piccalil.li/] ) and was curious to know how if differs from BEM. So I decided to read more about it and use this project as a way to implement what I've learned.
 
 - CUBE stands for **Composition Utility Block Exception**
- - `Composition` is the layer that controls the overall layout (i.e how elements interact to each other) and the rhythm (i.e the space around those elements)
- - `Utility` is the layer that defines re-usable helper classes that apply a single `CSS` property or a concise group of related properties (i.e a single-responsibility class)
- - `Block` is the layer that defines a group of rules for a specific context (i.e the rules for a specific component). This layer leverages on the work done by the two previous layers
- - `Exception` is the layer that defines a variation to the rules defined by a block (i.e the rules that affect the state or behavior of a block)
-- This methodology leverages greatly on the cascade and on inheritance rather than working against it
+  - **Composition** is the layer that controls the overall layout *(i.e how elements interact with each other)* and the rhythm *(i.e the space around those elements)*
+  - **Utility** is the layer that defines re-usable helper classes that apply a single `CSS` property or a concise group of related properties *(i.e a single-responsibility class)*
+  - **Block** is the layer that defines a group of rules for a specific context *(i.e the rules for a specific component)*. This layer leverages on the work done by the two previous layers
+  - **Exception** is the layer that defines a variation to the rules defined by a block *(i.e the rules that affect the state or behavior of a block)*
+- This methodology leverages greatly on the cascading and the inheritance mechanism of `CSS` rather than working against it
 - Since we can have multiples classes applied on a single element, this methodology also enforces a grouping mechanism for related classes. The order of the grouping is also important and should be as follows:
- - First the primary `block` class
- - Then any subsequent `block` classes
- - Then standard `utility` classes
- - And finally design token `utility` classes
+  - First the primary **block** class
+  - Then any subsequent **block** classes
+  - Then standard **utility** classes
+  - And finally design token **utility** classes
 
 ### Useful resources
 
