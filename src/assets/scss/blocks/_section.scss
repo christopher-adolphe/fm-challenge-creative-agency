@@ -30,7 +30,7 @@
       object-fit: cover;
     }
 
-    figcaption {
+    &-caption {
       position: absolute;
       left: 0;
       bottom: 0;
@@ -334,7 +334,7 @@
     --caption-sub-title-font-size: #{toRem(18px)};
 
     &__image {
-      figcaption {
+      &-caption {
         span {
           &:last-child {
             font-size: var(--caption-sub-title-font-size);
