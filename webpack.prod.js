@@ -53,10 +53,6 @@ module.exports = merge(common, {
             to: 'assets/images/[name][ext]'
           },
           {
-            from: 'src/assets/images/home/*',
-            to: 'assets/images/home/[name][ext]'
-          },
-          {
             from: 'src/assets/images/home/desktop/*',
             to: 'assets/images/home/desktop/[name][ext]'
           },
