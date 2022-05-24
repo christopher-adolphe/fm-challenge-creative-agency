@@ -6,6 +6,7 @@
   --content-font-size: #{toRem(15px)};
   --content-gap: 0;
   --content-horizontal-space-left: #{map-get($size-scale, s0)};
+  --conetnt-vertical-space-bottom: #{calc(map-get($size-scale, s0) * 1.25)};
 
   > * {
     color: inherit;
@@ -49,7 +50,7 @@
       &__title {
         position: absolute;
         left: var(--content-horizontal-space-left);
-        bottom: calc(map-get($size-scale, s0) * 1.25);
+        bottom: var(--conetnt-vertical-space-bottom);
       }
 
       &__content {
@@ -64,5 +65,6 @@
     --content-font-size: #{calc(map-get($size-scale, s0) * 1.125)};
     --content-gap: #{calc(map-get($size-scale, s0) * 1.5)};
     --content-horizontal-space-left: #{calc(map-get($size-scale, s0) * 3.75)};
+    --conetnt-vertical-space-bottom: #{calc(map-get($size-scale, s0) * 0.625)};
   }
 }
