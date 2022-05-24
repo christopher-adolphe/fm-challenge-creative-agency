@@ -30,7 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  projectsSlider?.init();
+  if (projectsSlider) {
+    projectsSlider.init();
+  }
+
 
   toggleHeaderVariant('header');
   toggleNavigation('btn-nav-toggle');

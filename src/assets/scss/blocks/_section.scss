@@ -181,12 +181,26 @@
   }
 
   @include media-breakpoint(md) {
+    &[data-variant="hero"],
+    &[data-variant="about"],
+    &[data-variant="services"],
+    &[data-variant="projects"] {
+      position: relative;
+
+      .container {
+        position: absolute;
+      }
+    }
+
     &[data-variant="hero"] {
       --img-target-height: #{toRem(606px)};
       --content-vertical-space-top: 0;
       --content-vertical-space-bottom: 0;
 
-      position: relative;
+      .container {
+        top: var(--vertical-space-top);
+        left: var(--horizontal-space-left);
+      }
 
       .section__image {
         picture {
@@ -207,12 +221,6 @@
           }
         }
       }
-
-      .container {
-        position: absolute;
-        top: var(--vertical-space-top);
-        left: var(--horizontal-space-left);
-      }
     }
 
     &[data-variant="about"] {
@@ -222,10 +230,7 @@
       --content-vertical-space-bottom: 0;
       --content-horizontal-space-left: #{calc(map-get($size-scale, s0) * 4.375)};
 
-      position: relative;
-
       .container {
-        position: absolute;
         top: var(--vertical-space-top);
         left: var(--horizontal-space-left);
       }
@@ -254,12 +259,11 @@
       --title-horizontal-space-left: 0;
       --title-max-width: 16ch;
 
+      background-color: transparent;
+
       &::before {
         display: block;
       }
-
-      position: relative;
-      background-color: transparent;
 
       .container {
         position: absolute;
@@ -302,10 +306,7 @@
       --content-vertical-space-top: #{calc(map-get($size-scale, s0) * 6.25)};
       --content-vertical-space-bottom: #{calc(map-get($size-scale, s0) * 10.75)};
 
-      position: relative;
-
       .container {
-        position: absolute;
         top: var(--vertical-space-top);
         left: var(--horizontal-space-left);
         background-color: transparent;
