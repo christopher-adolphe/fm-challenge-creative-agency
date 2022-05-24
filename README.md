@@ -28,7 +28,7 @@ Users should be able to:
 
 #### Home page
 
-![Preview for the Creative agency single page](./preview.jpg)
+![Preview for the Creative agency single page](./screenshot-home.png)
 
 ### Links
 
