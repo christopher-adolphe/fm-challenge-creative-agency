@@ -4,7 +4,7 @@
   --vertical-space-top: #{calc(map-get($size-scale, s0) * 4.75)};
   --horizontal-space-left: 0;
   --img-min-height: #{toRem(200px)};
-  --img-max-height: #{toRem(800px)};
+  --img-max-height: #{toRem(900px)};
   --img-target-height: #{toRem(200px)};
   --content-vertical-space-top: #{calc(map-get($size-scale, s0) * 3.5)};
   --content-vertical-space-bottom: #{calc(map-get($size-scale, s0) * 6)};
